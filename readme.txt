@@ -1,10 +1,10 @@
 === Block AI Crawlers ===
 Contributors: lastsplash
-Tags: comments, spam, chatgpt
+Tags: ai, chatgpt, ai crawlers
 Requires at least: 5.6
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,9 @@ Tell AI crawlers that they shouldn't access your site.
 
 == Description ==
 
-Long description
+This plugin blocks AI crawlers and bots from ChatGPT and Common Crawl. It uses methods recognized by OpenAI and Common Crawl to block via your site's `robots.txt` file. It adds the "noai, noimageai" directive to your site's meta tags. These signals tell AI bots not to use your content as part of their data sets.
+
+*Note:* While the plugin adds these markers, it is up to the crawlers themeselves to honor these requests.
 
 == Installation ==
 
@@ -32,6 +34,10 @@ If you have a physical `robots.txt` file on your web server, you won't be able t
 
 It should in theory. It just appends the directives to the `robots.txt` file.
 
+= Will this remove my site from existing data sets? =
+
+Unfortunately, no. However, it does tell bots that your site shouldn't be included in the future.
+
 == Screenshots ==
 
 1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
@@ -44,11 +50,3 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 = 1.0.0 =
 Initial Release.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.

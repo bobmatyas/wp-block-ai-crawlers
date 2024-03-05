@@ -10,21 +10,28 @@
  * @package         Block_AI_Crawlers
  */
 
+/*
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 F
+*/
 
 add_filter( 'robots_txt', 'block_ai_robots_txt', 1, 2 );
 
 function block_ai_robots_txt( $robots, $public ) {
-	if ( '1' == $public ) { 
-		$robots .= "\n" . "# Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/" . "\n" . "User-agent: CCBot" . "\n" . "Disallow: /" . "\n";
-		$robots .= "\n" . "# Block ChatGPT - https://platform.openai.com/docs/plugins/bot" . "\n" . "User-agent: ChatGPT-User" . "\n" . "Disallow: /" . "\n";
-		$robots .= "\n" . "# Block GPTBot - https://platform.openai.com/docs/gptbot" . "\n" . "User-agent: GPTBot" . "\n" . "Disallow: /" . "\n";
+	if ( '1' === $public ) {
+		$robots .= "\n # Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: CCBot \n Disallow: / \n";
+		$robots .= "\n # Block ChatGPT - https://platform.openai.com/docs/plugins/bot \n User-agent: ChatGPT-User \n Disallow: / \n";
+		$robots .= "\n # Block GPTBot - https://platform.openai.com/docs/gptbot \n User-agent: GPTBot \n . Disallow: / \n";
 	}
 	return ( $robots );
 }
 
 /* Meta Tag */
 
-add_action('wp_head', 'block_ai_meta_tag', 1);
+add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
 function block_ai_meta_tag() {
 	echo '<meta name="robots" content="noai, noimageai" />';
@@ -33,7 +40,7 @@ function block_ai_meta_tag() {
 /* Activation */
 
 function block_ai_activate() {
-	if ( file_exists("{$_SERVER['DOCUMENT_ROOT']}/robots.txt") ) { 
+	if ( file_exists( "{$_SERVER['DOCUMENT_ROOT']}/robots.txt" ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 		wp_die( '<h1>Could Not Activate Plugin</h1><p>Your site uses a physical <code>robots.txt</code> file. This plugin can only be activated when using the built-in virtual <code>robots.txt</code> provided by WordPress.</p> <h2>To Activate</h2><p>Move the <code>robots.txt</code> file outside of your root directory or rename it to something like <code>robots.txt.bak</code>. This file is located at:<br><br><b>' . esc_html( "{$_SERVER['DOCUMENT_ROOT']}/robots.txt" ) . '</b></p> <p>Once that is done, please try reactivating the plugin.</p>', '', array( 'back_link' => true ) );
 	}
