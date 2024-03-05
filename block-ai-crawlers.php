@@ -6,39 +6,43 @@
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
  * Version:         1.0.0
+ * License:         GPL-2.0-or-later
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package         Block_AI_Crawlers
  */
 
-/*
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 F
-*/
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 add_filter( 'robots_txt', 'block_ai_robots_txt', 1, 2 );
 
-function block_ai_robots_txt( $robots, $public ) {
-	if ( '1' === $public ) {
-		$robots .= "\n # Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: CCBot \n Disallow: / \n";
-		$robots .= "\n # Block ChatGPT - https://platform.openai.com/docs/plugins/bot \n User-agent: ChatGPT-User \n Disallow: / \n";
-		$robots .= "\n # Block GPTBot - https://platform.openai.com/docs/gptbot \n User-agent: GPTBot \n . Disallow: / \n";
-	}
+/**
+ * Adds blocking directives to robots.txt
+ *
+ * @param string $robots inputs default robots.txt.
+ * @return string
+ */
+function block_ai_robots_txt( $robots ) {
+		$robots .= "\n# Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: CCBot \n Disallow: / \n";
+		$robots .= "\n# Block ChatGPT - https://platform.openai.com/docs/plugins/bot \n User-agent: ChatGPT-User \n Disallow: / \n";
+		$robots .= "\n# Block GPTBot - https://platform.openai.com/docs/gptbot \n User-agent: GPTBot \n  Disallow: / \n";
 	return ( $robots );
 }
 
-/* Meta Tag */
-
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
+/**
+ * Adds noads robots meta tag
+ */
 function block_ai_meta_tag() {
 	echo '<meta name="robots" content="noai, noimageai" />';
 }
 
-/* Activation */
-
+/**
+ * Plugin activation
+ */
 function block_ai_activate() {
 	if ( file_exists( "{$_SERVER['DOCUMENT_ROOT']}/robots.txt" ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
