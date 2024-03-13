@@ -34,7 +34,7 @@ function block_ai_robots_txt( $robots ) {
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
 /**
- * Adds noads robots meta tag
+ * Adds no robots meta tag
  */
 function block_ai_meta_tag() {
 	echo '<meta name="robots" content="noai, noimageai" />';
