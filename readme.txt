@@ -1,6 +1,6 @@
 === Block AI Crawlers ===
 Contributors: lastsplash
-Tags: ai, chatgpt, ai crawlers
+Tags: ai, robots.txt, chatgpt, ai bots, ai crawlers, noai
 Requires at least: 5.6
 Tested up to: 6.4
 Requires PHP: 5.6
@@ -12,7 +12,19 @@ Tell AI crawlers that they shouldn't access your site.
 
 == Description ==
 
-This plugin blocks AI crawlers and bots from ChatGPT and Common Crawl. It uses methods recognized by OpenAI and Common Crawl to block via your site's `robots.txt` file. It adds the "noai, noimageai" directive to your site's meta tags. These signals tell AI bots not to use your content as part of their data sets.
+This plugin tells AI crawlers not to index your site. 
+
+It uses `robots.txt` to tell the following crawlers not to index your site:
+
+- **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
+- **CommonCrawl** - Crawler that compiles datasets used to train AI models
+- **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
+- **FacebookBot** - Crawler used for Facebook's AI training
+- **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
+- **Omgili** - Crawler used by Omgili for AI training
+- **Bytespider** - Crawler used by TikTolk for AI training 
+
+Additionally, the plugin adds the "noai, noimageai" directive to your site's meta tags. These signals tell AI bots not to use your content as part of their data sets.
 
 *Note:* While the plugin adds these markers, it is up to the crawlers themeselves to honor these requests.
 
@@ -42,6 +54,9 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 
 == Changelog ==
+
+= 1.1.0 =
+- Blocks additional crawlers.
 
 = 1.0.0 =
 Initial Release.
