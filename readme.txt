@@ -56,6 +56,7 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 == Changelog ==
 
 = 1.2.0 =
+- Block DiffBot crawler
 - Block Anthropic AI crawler
 - Indicate compatibility w/WordPress 6.5.2
 

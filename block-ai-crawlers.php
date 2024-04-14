@@ -28,6 +28,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block Anthropic - https://darkvisitors.com/agents/anthropic-ai \n User-agent: anthropic-ai \n Disallow: / \n";
 		$robots .= "\n# Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: CCBot \n Disallow: / \n";
 		$robots .= "\n# Block ChatGPT - https://platform.openai.com/docs/plugins/bot \n User-agent: ChatGPT-User \n Disallow: / \n";
+		$robots .= "\n# Block DiffBot - https://docs.diffbot.com/reference/crawl-introduction \n User-agent: ChatGPT-User \n Disallow: / \n";
 		$robots .= "\n# Block GPTBot - https://platform.openai.com/docs/gptbot \n User-agent: GPTBot \n  Disallow: / \n";
 		$robots .= "\n# Block Google Extended - https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers \n User-agent: Google-Extended \n  Disallow: / \n";
 		$robots .= "\n# Block Facebook - https://developers.facebook.com/docs/sharing/bot \n User-agent: FacebookBot \n  Disallow: / \n";
