@@ -1,10 +1,10 @@
 === Block AI Crawlers ===
 Contributors: lastsplash
-Tags: ai, robots.txt, chatgpt, ai bots, ai crawlers, noai
+Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.4
+Tested up to: 6.5.2
 Requires PHP: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,10 +17,10 @@ This plugin tells AI crawlers not to index your site.
 It uses `robots.txt` to tell the following crawlers not to index your site:
 
 - **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
-- **CommonCrawl** - Crawler that compiles datasets used to train AI models
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
 - **FacebookBot** - Crawler used for Facebook's AI training
-- **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
+- **CommonCrawl** - Crawler that compiles datasets used to train AI models
+- **Anthropic AI** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
 - **Bytespider** - Crawler used by TikTolk for AI training 
 
@@ -54,6 +54,12 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 
 == Changelog ==
+
+= 1.2.0 =
+- Block Cohere crawler
+- Block DiffBot crawler
+- Block Anthropic AI crawler
+- Indicate compatibility w/WordPress 6.5.2
 
 = 1.1.0 =
 - Blocks additional crawlers.
