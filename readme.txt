@@ -4,17 +4,17 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.5.2
 Requires PHP: 5.6
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tell AI crawlers that they shouldn't access your site.
+Ask AI crawlers not to access your site to train their models.
 
 == Description ==
 
-This plugin tells AI crawlers not to index your site. 
+This plugin will tell AI crawlers not to use  your site for their training data. AI crawlers read a site's `robots.txt` to check for a request not to index. This plugin will send that signal to AI crawlers.
 
-It uses `robots.txt` to tell the following crawlers not to index your site:
+It asks the following crawlers not to index your site:
 
 - **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
@@ -23,8 +23,14 @@ It uses `robots.txt` to tell the following crawlers not to index your site:
 - **Anthropic AI** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
 - **Bytespider** - Crawler used by TikTolk for AI training 
+- **Cohere** - Crawler used by Cohere AI training 
+- **DiffBot** - Crawler used by Diffbot for AI training 
 
-Additionally, the plugin adds the "noai, noimageai" directive to your site's meta tags. These signals tell AI bots not to use your content as part of their data sets.
+## Experimental Meta Tags
+
+The plugin adds the "noai, noimageai" directive to your site's meta tags. These tags tell AI bots not to use your content as part of their data sets. These are experimental and they have not been standardized. 
+
+## Disclaimer
 
 *Note:* While the plugin adds these markers, it is up to the crawlers themeselves to honor these requests.
 
@@ -54,6 +60,9 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 
 == Changelog ==
+
+= 1.2.2 =
+- Update: Adds deploy from GitHub
 
 = 1.2.1 =
 - Maintenance: Adds deploy from GitHub
