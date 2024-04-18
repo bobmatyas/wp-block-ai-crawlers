@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.2.0
+ * Version:         1.2.1
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -41,7 +41,7 @@ function block_ai_robots_txt( $robots ) {
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
 /**
- * Adds no robots meta tag
+ * Adds no AI meta tag
  */
 function block_ai_meta_tag() {
 	echo '<meta name="robots" content="noai, noimageai" />';
