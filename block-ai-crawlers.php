@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.2.2
+ * Version:         1.3.0
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_filter( 'robots_txt', 'block_ai_robots_txt', 1, 2 );
+
+require __DIR__ . '/inc/settings.php';
 
 /**
  * Adds blocking directives to robots.txt
