@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Block AI Crawlers
- * Description:     Blocks AI crawlers and bots including ChatGPT via robots.txt and meta tags.
+ * Description:     Blocks AI crawlers and bots via robots.txt and meta tags.
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers

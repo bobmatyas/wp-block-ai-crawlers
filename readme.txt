@@ -61,6 +61,10 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 == Changelog ==
 
+= 1.3.0 =
+- New: Adds settings page showing blocked crawlers
+- Enhancement: Remove crawler description in `robots.txt`
+
 = 1.2.2 =
 - Update: Adds deploy from GitHub
 

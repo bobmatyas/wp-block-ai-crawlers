@@ -1,0 +1,64 @@
+.block-ai-container div.notice.notice-info > p {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.block-ai-container div.block-ai-info {
+  background-color: #fff;
+  padding: 25px;
+  margin-top: 15px;
+  border: 1px solid #c3c4c7;
+}
+
+.block-ai-container div.block-ai-info p {
+  font-size: 135%;
+  color: rgb(75, 75, 75);
+}
+
+.block-ai-container div.block-ai-info table th,
+.block-ai-container div.block-ai-info table p {
+  color: rgb(75, 75, 75);
+  font-size: 120%;
+}
+.block-ai-container div.block-ai-info table p {
+  font-size: 115%;
+  margin-top: 0;
+}
+
+.block-ai-container table {
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.block-ai-container table tr {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.block-ai-container table :is(th, td) {
+  padding: 10px;
+}
+
+.block-ai-container summary h3 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.block-ai-container summary {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.block-ai-container section > h3 {
+  margin-top: 2.25em;
+  display: block;
+}
+
+.block-ai-container hr {
+  border: none;
+  border-bottom: 2px solid #eee;
+  color: #fff;
+}
