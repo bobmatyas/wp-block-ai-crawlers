@@ -51,7 +51,7 @@ function block_ai_crawlers_option_page() {
 	<p>AI Bots and Crawlers are being automatically blocked via code inserted into your site's <code>robots.txt</code> file. This is a standard way to communicate preferences to web crawlers.</p>
 	<p><i>Note:</i> It is up to the AI companies to obey these directions. Unfortunately, there is no guarantee that they will.</p>
 	<section>
-		<details open> 
+		<details> 
 		<summary><h3>Blocked Crawlers</h3></summary>
 		<table class="form-table">
 			<tbody>

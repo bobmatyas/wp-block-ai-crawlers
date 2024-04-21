@@ -37,6 +37,8 @@ The plugin adds the "noai, noimageai" directive to your site's meta tags. These 
 == Installation ==
 
 1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Once installed the plugin is automatically activated. There are no user configured settings
+3. You can view more about what crawlers are being blocked at "Settings > Block AI Crawlers"
 
 == Frequently Asked Questions ==
 
@@ -82,3 +84,7 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 = 1.0.0 =
 Initial Release.
+
+== Screenshots ==
+
+1. Plugin page showing which crawlers are blocked
