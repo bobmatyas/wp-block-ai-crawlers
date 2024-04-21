@@ -16,6 +16,17 @@
   color: rgb(75, 75, 75);
 }
 
+.block-ai-container .link {
+	font-size: 100%;
+	padding-top: 2px;
+	text-decoration: none;
+}
+
+.block-ai-container table a:hover, 
+.block-ai-container table a:active {
+	text-decoration: none;
+} 
+
 .block-ai-container div.block-ai-info table th,
 .block-ai-container div.block-ai-info table p {
   color: rgb(75, 75, 75);

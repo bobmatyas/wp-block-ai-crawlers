@@ -27,16 +27,19 @@ require __DIR__ . '/inc/settings.php';
  * @return string
  */
 function block_ai_robots_txt( $robots ) {
-		$robots .= "\n# Block Anthropic - https://darkvisitors.com/agents/anthropic-ai \n User-agent: anthropic-ai \n Disallow: / \n";
-		$robots .= "\n# Block Cohere - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: cohere-ai \n Disallow: / \n";
-		$robots .= "\n# Block Common Crawl - https://commoncrawl.org/big-picture/frequently-asked-questions/ \n User-agent: CCBot \n Disallow: / \n";
-		$robots .= "\n# Block ChatGPT - https://platform.openai.com/docs/plugins/bot \n User-agent: ChatGPT-User \n Disallow: / \n";
-		$robots .= "\n# Block DiffBot - https://docs.diffbot.com/reference/crawl-introduction \n User-agent: Diffbot \n Disallow: / \n";
-		$robots .= "\n# Block GPTBot - https://platform.openai.com/docs/gptbot \n User-agent: GPTBot \n  Disallow: / \n";
-		$robots .= "\n# Block Google Extended - https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers \n User-agent: Google-Extended \n  Disallow: / \n";
-		$robots .= "\n# Block Facebook - https://developers.facebook.com/docs/sharing/bot \n User-agent: FacebookBot \n  Disallow: / \n";
-		$robots .= "\n# Block Omgili - https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/ \n User-agent: Omgili \n  Disallow: / \n";
-		$robots .= "\n# Block Bytespider - https://darkvisitors.com/agents/bytespider \n User-agent: Bytespider \n  Disallow: / \n";
+		$robots .= "\n# Block AI Crawlers\n\n";
+		$robots .= "User-agent: anthropic-ai\n";
+		$robots .= "User-agent: cohere-ai\n";
+		$robots .= "User-agent: CCBot\n";
+		$robots .= "User-agent: ChatGPT-User\n";
+		$robots .= "User-agent: Diffbot\n";
+		$robots .= "User-agent: GPTBot\n";
+		$robots .= "User-agent: Google-Extended\n";
+		$robots .= "User-agent: FacebookBot\n";
+		$robots .= "User-agent: Omgili \n";
+		$robots .= "User-agent: Bytespider\n";
+		$robots .= "Disallow: /\n\n";
+		$robots .= "# End Block AI Crawlers\n";
 		return ( $robots );
 }
 
