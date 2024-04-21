@@ -4,7 +4,7 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.5.2
 Requires PHP: 5.6
-Stable tag: 1.2.2
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,10 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 
 == Changelog ==
+
+= 1.3.0 =
+- New: Adds settings page showing blocked crawlers
+- Enhancement: Remove crawler description in `robots.txt`
 
 = 1.2.2 =
 - Update: Adds deploy from GitHub
