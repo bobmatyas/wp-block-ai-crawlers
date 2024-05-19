@@ -86,6 +86,11 @@ function block_ai_crawlers_option_page() {
 					<td><a href="https://darkvisitors.com/agents/anthropic-ai" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 				</tr>
 				<tr>
+					<th>ClaudeBot and Claude-Web</th>
+					<td><p>Used by Anthropic's Claude</p></td>
+					<td><a href="https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+				</tr>
+				<tr>
 					<th>Bytespider</th>
 					<td><p>Used by TikTok for AI training</p></td>
 					<td><a href="https://darkvisitors.com/agents/bytespider" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
