@@ -77,6 +77,11 @@
 									<td><p>Used by Diffbot to scrape data for AI training</p></td>
 									<td><a href="https://docs.diffbot.com/reference/crawl-introduction" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>ImagesiftBot</th>
+									<td><p>Used by Hive's Imagesift tool that scrapes images. THis may be used for the company's generative AI product </p></td>
+									<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>

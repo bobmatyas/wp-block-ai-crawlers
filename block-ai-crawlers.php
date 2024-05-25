@@ -41,6 +41,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: Omgili \n";
 		$robots .= "User-agent: Omgilibot \n";
+		$robots .= "User-agent: ImagesiftBot \n";
 		$robots .= "Disallow: /\n\n";
 		$robots .= "# End Block AI Crawlers\n";
 		return ( $robots );
