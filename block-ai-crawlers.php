@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.3.4
+ * Version:         1.3.5
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -40,6 +40,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: Omgili \n";
+		$robots .= "User-agent: Omgilibot \n";
+		$robots .= "User-agent: ImagesiftBot \n";
 		$robots .= "Disallow: /\n\n";
 		$robots .= "# End Block AI Crawlers\n";
 		return ( $robots );

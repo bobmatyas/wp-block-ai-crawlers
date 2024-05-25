@@ -4,7 +4,7 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.5.3
 Requires PHP: 5.6
-Stable tag: 1.3.3
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,11 +20,12 @@ It asks the following crawlers not to index your site:
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
 - **FacebookBot** - Crawler used for Facebook's AI training
 - **CommonCrawl** - Crawler that compiles datasets used to train AI models
-- **Anthropic AI** - Crawler used by Anthropic
+- **Anthropic AI / Claude** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
 - **Bytespider** - Crawler used by TikTolk for AI training 
 - **Cohere** - Crawler used by Cohere AI training 
 - **DiffBot** - Crawler used by Diffbot for AI training 
+- **Imagesift** - Crawler used by used by Imagesift for images 
 
 ## Experimental Meta Tags
 
@@ -63,7 +64,13 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 == Changelog ==
 
-= 1.3.4 =
+= 1.3.5 =
+- New: Block additional Omgili bot
+- New: Block Imagesift
+- Fix: Fix settings page
+- Add: `blueprint.json` for plugin preview
+
+= 1.3.3 =
 - Fix: Issue with fatal errors on activation
 
 = 1.3.1 =
