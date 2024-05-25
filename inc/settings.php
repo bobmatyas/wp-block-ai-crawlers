@@ -41,6 +41,6 @@ function block_ai_crawlers_add_settings_menu() {
  * @return void
  */
 function block_ai_crawlers_option_page() {
-	$settings_HTML = file_get_contents( plugins_url( 'settings-content.php' , __FILE__ ));
+	$settings_HTML = file_get_contents( plugins_url( 'settings-html.php' , __FILE__ ));
 	echo $settings_HTML;
 }
