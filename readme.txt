@@ -63,7 +63,7 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be includ
 
 == Changelog ==
 
-= 1.3.1 =
+= 1.3.4 =
 - Fix: Issue with fatal errors on activation
 
 = 1.3.1 =
