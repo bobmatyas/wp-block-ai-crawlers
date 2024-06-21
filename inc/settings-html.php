@@ -82,6 +82,11 @@
 									<td><p>Used by Perplexity for their AI products</p></td>
 									<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>AppleBot</th>
+									<td><p>Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.</p></td>
+									<td><a href="https://support.apple.com/en-us/119829" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
