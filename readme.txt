@@ -12,9 +12,9 @@ Tell AI crawlers not to access your site to train their models.
 
 == Description ==
 
-This plugin will tell AI crawlers (such as OpenAI ChatGPT) not to use your site for Artificial Intelligence (AI) models. This plugin adds entries to your site's `robots.txt` blocking common AI crawlers and scrapers. AI crawlers read a site's `robots.txt` to check for a request not to index. 
+Tells AI crawlers (such as OpenAI ChatGPT) not to use your website as training data for their Artificial Intelligence (AI) products. It does this by updating your site's `robots.txt` to block common AI crawlers and scrapers. AI crawlers read a site's `robots.txt` to check for a request not to index. 
 
-It asks the following crawlers not to index your site:
+It blocks these AI crawlers and bots:
 
 - **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
@@ -22,7 +22,7 @@ It asks the following crawlers not to index your site:
 - **CommonCrawl** - Crawler that compiles datasets used to train AI models
 - **Anthropic AI / Claude** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
-- **Bytespider** - Crawler used by TikTolk for AI training 
+- **Bytespider** - Crawler used by TikTok for AI training 
 - **PerplexityBot** - Used by Perplexity for its AI products
 - **Applebot** - Used by Apple to train its AI products
 - **Cohere** - Crawler used by Cohere AI training 
@@ -69,6 +69,11 @@ No. Search engines follow differnt `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.3.6 =
+- New: Block Perplexity
+- New: Block Apple AI
+- Update: FAQ based on submitted question
 
 = 1.3.5 =
 - New: Block additional Omgili bot
