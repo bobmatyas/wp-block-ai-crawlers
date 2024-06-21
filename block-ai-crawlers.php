@@ -39,6 +39,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: Google-Extended\n";
+		$robots .= "User Agent: PerplexityBot\n"
 		$robots .= "User-agent: Omgili \n";
 		$robots .= "User-agent: Omgilibot \n";
 		$robots .= "User-agent: ImagesiftBot \n";

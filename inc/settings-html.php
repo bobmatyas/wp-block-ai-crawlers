@@ -48,11 +48,6 @@
 									<td><a href="https://commoncrawl.org/big-picture/frequently-asked-questions/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
 								<tr>
-									<th>AnthropicAI</th>
-									<td><p>Used by Anthropic</p></td>
-									<td><a href="https://darkvisitors.com/agents/anthropic-ai" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-								</tr>
-								<tr>
 									<th>ClaudeBot and Claude-Web</th>
 									<td><p>Used by Anthropic's Claude</p></td>
 									<td><a href="https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
@@ -81,6 +76,11 @@
 									<th>ImagesiftBot</th>
 									<td><p>Used by Hive's Imagesift tool that scrapes images. THis may be used for the company's generative AI product </p></td>
 									<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<tr>
+									<th>PerplexityBot</th>
+									<td><p>Used by Perplexity for their AI products</p></td>
+									<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
 							</tbody>
 						</table>
