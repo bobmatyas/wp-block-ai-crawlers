@@ -3,16 +3,16 @@ Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.5.3
-Requires PHP: 5.6
-Stable tag: 1.3.5
+Requires PHP: 7.4
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Ask AI crawlers not to access your site to train their models.
+Tell AI crawlers not to access your site to train their models.
 
 == Description ==
 
-This plugin will tell AI crawlers not to use  your site for their training data. AI crawlers read a site's `robots.txt` to check for a request not to index. This plugin will send that signal to AI crawlers.
+This plugin will tell AI crawlers (such as OpenAI ChatGPT) not to use your site for Artificial Intelligence (AI) models. This plugin adds entries to your site's `robots.txt` blocking common AI crawlers and scrapers. AI crawlers read a site's `robots.txt` to check for a request not to index. 
 
 It asks the following crawlers not to index your site:
 
