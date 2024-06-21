@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.3.5
+ * Version:         1.3.6
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -28,6 +28,7 @@ require __DIR__ . '/inc/settings.php';
  */
 function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block AI Crawlers\n\n";
+		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
 		$robots .= "User-agent: Bytespider\n";
 		$robots .= "User-agent: CCBot\n";
@@ -36,12 +37,13 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Claude-Web\n";
 		$robots .= "User-agent: cohere-ai\n";
 		$robots .= "User-agent: Diffbot\n";
-		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: FacebookBot\n";
+		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: Google-Extended\n";
-		$robots .= "User-agent: Omgili \n";
-		$robots .= "User-agent: Omgilibot \n";
-		$robots .= "User-agent: ImagesiftBot \n";
+		$robots .= "User-agent: ImagesiftBot\n";
+		$robots .= "User-agent: Omgili\n";
+		$robots .= "User-agent: Omgilibot\n";
+		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "Disallow: /\n\n";
 		$robots .= "# End Block AI Crawlers\n";
 		return ( $robots );

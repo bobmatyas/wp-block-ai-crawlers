@@ -3,18 +3,18 @@ Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.5.3
-Requires PHP: 5.6
-Stable tag: 1.3.5
+Requires PHP: 7.4
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Ask AI crawlers not to access your site to train their models.
+Tell AI crawlers not to access your site to train their models.
 
 == Description ==
 
-This plugin will tell AI crawlers not to use  your site for their training data. AI crawlers read a site's `robots.txt` to check for a request not to index. This plugin will send that signal to AI crawlers.
+Tells AI crawlers (such as OpenAI ChatGPT) not to use your website as training data for their Artificial Intelligence (AI) products. It does this by updating your site's `robots.txt` to block common AI crawlers and scrapers. AI crawlers read a site's `robots.txt` to check for a request not to index. 
 
-It asks the following crawlers not to index your site:
+It blocks these AI crawlers and bots:
 
 - **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
@@ -22,7 +22,9 @@ It asks the following crawlers not to index your site:
 - **CommonCrawl** - Crawler that compiles datasets used to train AI models
 - **Anthropic AI / Claude** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
-- **Bytespider** - Crawler used by TikTolk for AI training 
+- **Bytespider** - Crawler used by TikTok for AI training 
+- **PerplexityBot** - Used by Perplexity for its AI products
+- **Applebot** - Used by Apple to train its AI products
 - **Cohere** - Crawler used by Cohere AI training 
 - **DiffBot** - Crawler used by Diffbot for AI training 
 - **Imagesift** - Crawler used by used by Imagesift for images 
@@ -43,6 +45,10 @@ The plugin adds the "noai, noimageai" directive to your site's meta tags. These 
 
 == Frequently Asked Questions ==
 
+= Will this remove my site from existing data sets? =
+
+Unfortunately, no. However, it does tell bots that your site shouldn't be used for future datasets.
+
 = How does this work? =
 
 The plugin adds directives to the `robots.txt` file to tell AI crawlers that they shouldn't index your site. It also adds the `noai` meta tag to your site's header to do the same.
@@ -55,14 +61,19 @@ If you have a physical `robots.txt` file on your web server, you won't be able t
 
 It should in theory. It just appends the directives to the `robots.txt` file.
 
-= Will this remove my site from existing data sets? =
+= Will this prevent my site from being indexed by search engines? =
 
-Unfortunately, no. However, it does tell bots that your site shouldn't be included in the future.
+No. Search engines follow differnt `robots.txt` rules.
 
 == Screenshots ==
 
 
 == Changelog ==
+
+= 1.3.6 =
+- New: Block Perplexity
+- New: Block Apple AI
+- Update: FAQ based on submitted question
 
 = 1.3.5 =
 - New: Block additional Omgili bot
