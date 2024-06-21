@@ -23,6 +23,8 @@ It asks the following crawlers not to index your site:
 - **Anthropic AI / Claude** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
 - **Bytespider** - Crawler used by TikTolk for AI training 
+- **PerplexityBot** - Used by Perplexity for its AI products
+- **Applebot** - Used by Apple to train its AI products
 - **Cohere** - Crawler used by Cohere AI training 
 - **DiffBot** - Crawler used by Diffbot for AI training 
 - **Imagesift** - Crawler used by used by Imagesift for images 
@@ -43,6 +45,10 @@ The plugin adds the "noai, noimageai" directive to your site's meta tags. These 
 
 == Frequently Asked Questions ==
 
+= Will this remove my site from existing data sets? =
+
+Unfortunately, no. However, it does tell bots that your site shouldn't be used for future datasets.
+
 = How does this work? =
 
 The plugin adds directives to the `robots.txt` file to tell AI crawlers that they shouldn't index your site. It also adds the `noai` meta tag to your site's header to do the same.
@@ -55,9 +61,9 @@ If you have a physical `robots.txt` file on your web server, you won't be able t
 
 It should in theory. It just appends the directives to the `robots.txt` file.
 
-= Will this remove my site from existing data sets? =
+= Will this prevent my site from being indexed by search engines? =
 
-Unfortunately, no. However, it does tell bots that your site shouldn't be included in the future.
+No. Search engines follow differnt `robots.txt` rules.
 
 == Screenshots ==
 
