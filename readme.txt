@@ -72,6 +72,9 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.3.8 =
+- Maintenance: Auto-deply from Github fixed / bumped version number
+
 = 1.3.7 =
 - New: Meta AI
 - New: Block You.com Crawler
