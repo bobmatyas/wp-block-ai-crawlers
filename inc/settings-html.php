@@ -92,6 +92,11 @@
 									<td><p>Used by Meta to train AI products</p></td>
 									<td><a href="https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>YouBot</th>
+									<td><p>Used by You.com to train AI products.</p></td>
+									<td><a href="https://about.you.com/es/youbot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
