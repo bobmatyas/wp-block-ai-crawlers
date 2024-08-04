@@ -12,13 +12,14 @@ Tell AI crawlers not to access your site to train their models.
 
 == Description ==
 
-Tells AI crawlers (such as OpenAI ChatGPT) not to use your website as training data for their Artificial Intelligence (AI) products. It does this by updating your site's `robots.txt` to block common AI crawlers and scrapers. AI crawlers read a site's `robots.txt` to check for a request not to index. 
+Tells AI crawlers (such as OpenAI ChatGPT) not to use your website as training data for their Artificial Intelligence (AI) products. It does this by updating your site's `robots.txt` to block common AI crawlers and scrapers. This should prevent your content from being used to traing Large Language Models (LLMs). 
 
 It blocks these AI crawlers and bots:
 
 - **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
 - **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
 - **FacebookBot** - Crawler used for Facebook's AI training
+- **Meta** - Blocks crawlers used by Meta AI training
 - **CommonCrawl** - Crawler that compiles datasets used to train AI models
 - **Anthropic AI / Claude** - Crawler used by Anthropic
 - **Omgili** - Crawler used by Omgili for AI training
@@ -28,6 +29,7 @@ It blocks these AI crawlers and bots:
 - **Cohere** - Crawler used by Cohere AI training 
 - **DiffBot** - Crawler used by Diffbot for AI training 
 - **Imagesift** - Crawler used by used by Imagesift for images 
+- ... and more!
 
 ## Experimental Meta Tags
 
@@ -63,12 +65,18 @@ It should in theory. It just appends the directives to the `robots.txt` file.
 
 = Will this prevent my site from being indexed by search engines? =
 
-No. Search engines follow differnt `robots.txt` rules.
+No. Search engines follow different `robots.txt` rules.
 
 == Screenshots ==
 
 
 == Changelog ==
+
+= 1.3.7 =
+- New: Meta AI
+- New: Block You.com Crawler
+- New: Block AmazonBot
+- New: Block Timpibot
 
 = 1.3.6 =
 - New: Block Perplexity

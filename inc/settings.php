@@ -32,7 +32,6 @@ function block_ai_crawlers_add_settings_menu() {
 		'block-ai-crawlers',
 		'block_ai_crawlers_option_page'
 	);
-
 }
 
 /**
@@ -41,6 +40,5 @@ function block_ai_crawlers_add_settings_menu() {
  * @return void
  */
 function block_ai_crawlers_option_page() {
-	$settings_HTML = file_get_contents( plugins_url( 'settings-html.php' , __FILE__ ));
-	echo $settings_HTML;
+	include plugin_dir_path( __FILE__ ) . 'settings-html.php';
 }

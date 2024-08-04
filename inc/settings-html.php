@@ -87,6 +87,26 @@
 									<td><p>Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.</p></td>
 									<td><a href="https://support.apple.com/en-us/119829" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>Meta-ExternalAgent / Meta-ExternalFetcher</th>
+									<td><p>Used by Meta to train AI products</p></td>
+									<td><a href="https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<tr>
+									<th>YouBot</th>
+									<td><p>Used by You.com to train AI products.</p></td>
+									<td><a href="https://about.you.com/es/youbot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<tr>
+									<th>AmazonBot</th>
+									<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
+									<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<tr>
+									<th>Timpibot</th>
+									<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
+									<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
