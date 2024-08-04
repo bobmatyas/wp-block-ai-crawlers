@@ -70,6 +70,12 @@ No. Search engines follow differnt `robots.txt` rules.
 
 == Changelog ==
 
+= 1.3.7 =
+- New: Meta AI
+- New: Block You.com Crawler
+- New: Block AmazonBot
+- Update: FAQ based on submitted question
+
 = 1.3.6 =
 - New: Block Perplexity
 - New: Block Apple AI

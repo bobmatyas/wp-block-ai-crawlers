@@ -97,6 +97,11 @@
 									<td><p>Used by You.com to train AI products.</p></td>
 									<td><a href="https://about.you.com/es/youbot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>AmazonBot</th>
+									<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
+									<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
