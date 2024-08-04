@@ -102,6 +102,11 @@
 									<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
 									<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>Timpibot</th>
+									<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
+									<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
