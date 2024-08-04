@@ -87,6 +87,11 @@
 									<td><p>Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.</p></td>
 									<td><a href="https://support.apple.com/en-us/119829" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>Meta-ExternalAgent / Meta-ExternalFetcher</th>
+									<td><p>Used by Meta to train AI products</p></td>
+									<td><a href="https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
