@@ -73,6 +73,7 @@ No. Search engines follow different `robots.txt` rules.
 == Changelog ==
 
 = 1.3.9 =
+- New: Block PetalBot
 - New: Block AI2Bot
 - New: Block Webz.io
 - New: Block OpenAI Search Bot (SearchGPT)
