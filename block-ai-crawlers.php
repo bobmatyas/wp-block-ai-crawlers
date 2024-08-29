@@ -50,6 +50,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: YouBot\n";
+		$robots .= "User-agent: webzio\n";
+		$robots .= "User-agent: webzio-extended\n";
 		$robots .= "Disallow: /\n\n";
 		$robots .= "# End Block AI Crawlers\n";
 		return ( $robots );

@@ -112,6 +112,15 @@
 									<td><p>Used by OpenAI for their SearchGPT product.</p></td>
 									<td><a href="https://platform.openai.com/docs/bots" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
+								<tr>
+									<th>Webzio</th>
+									<td><p>Used by Webz.io for their social listening and intelligence platforms.</p></td>
+									<td><a href="https://webz.io/bot.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<th>Webzio-Extended</th>
+									<td><p>Used by Webz.io for AI training.</p></td>
+									<td><a href="https://webz.io/bot.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
 							</tbody>
 						</table>
 				</details>
