@@ -44,10 +44,11 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: ImagesiftBot\n";
 		$robots .= "User-agent: Meta-ExternalAgent\n";
 		$robots .= "User-agent: Meta-ExternalFetcher\n";
+		$robots .= "User-agent: OAI-SearchBot\n";
 		$robots .= "User-agent: Omgili\n";
 		$robots .= "User-agent: Omgilibot\n";
 		$robots .= "User-agent: PerplexityBot\n";
-		$robots .= "User-agent: Timpibot\n";		
+		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "Disallow: /\n\n";
 		$robots .= "# End Block AI Crawlers\n";

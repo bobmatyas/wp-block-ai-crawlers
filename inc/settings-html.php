@@ -74,7 +74,7 @@
 								</tr>
 								<tr>
 									<th>ImagesiftBot</th>
-									<td><p>Used by Hive's Imagesift tool that scrapes images. THis may be used for the company's generative AI product </p></td>
+									<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product </p></td>
 									<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
 								<tr>
@@ -106,6 +106,11 @@
 									<th>Timpibot</th>
 									<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
 									<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+								<tr>
+									<th>OAI-SearchBot</th>
+									<td><p>Used by OpenAI for their SearchGPT product.</p></td>
+									<td><a href="https://platform.openai.com/docs/bots" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
 							</tbody>
 						</table>

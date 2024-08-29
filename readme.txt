@@ -73,6 +73,8 @@ No. Search engines follow different `robots.txt` rules.
 == Changelog ==
 
 = 1.3.9 =
+- New: Block OpenAI Search Bot
+- Enhancement: Indicate compatibility with WordPress v6.6
 - Enhancement: Add quick link to settings and nudge for rating on plugins page
 
 = 1.3.8 =
