@@ -8,7 +8,7 @@ Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tell AI crawlers not to access your site to train their models.
+Tells AI companies not to access and scrape your site for AI.
 
 == Description ==
 
