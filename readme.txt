@@ -2,9 +2,9 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.5.3
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.3.9 =
+- Enhancement: Add quick link to settings and nudge for rating on plugins page
 
 = 1.3.8 =
 - Maintenance: Auto-deply from Github fixed / bumped version number

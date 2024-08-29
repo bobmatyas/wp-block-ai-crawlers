@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.3.8
+ * Version:         1.3.9
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -74,3 +74,53 @@ function block_ai_activate() {
 }
 
 register_activation_hook( __FILE__, 'block_ai_activate' );
+
+add_filter( 'plugin_action_links', 'block_ai_prepend_plugin_settings_link', 10, 2 );
+
+/**
+ * Adds seettings link to plugins page
+ *
+ * @param array  $links_array            An array of the plugin's metadata.
+ * @param string $plugin_file_name       Path to the plugin file.
+ * @return array $links_array
+ */
+function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name ) {
+	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
+		array_unshift( $links_array, '<a href=" ' . get_admin_url() . ' options-general.php?page=block-ai-crawlers">Settings</a>' );
+	}
+	return $links_array;
+}
+
+
+/**
+ * Adds ratings nudge to plugins page
+ *
+ * @access public
+ * @param array  $links_array            An array of the plugin's metadata.
+ * @param string $plugin_file_name       Path to the plugin file.
+ * @return  array $links_array
+ */
+function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
+	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
+
+		$links_array[] = "<a href='https://wordpress.org/support/plugin/block-ai-crawlers/reviews/#new-post' target='_blank' title='Rate 5 Stars'>
+		<i class='rate-stars'>"
+		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
+		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
+		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
+		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
+		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
+		. '</i></a>';
+
+		$stars_color = '#ffb900';
+
+		echo '<style>'
+		. '.rate-stars{display:inline-block;color:' . $stars_color . ';position:relative;top:3px;}'
+		. '.rate-stars svg {fill:' . $stars_color . ';}'
+		. '</style>';
+	}
+ 
+	return $links_array;
+}
+
+add_filter( 'plugin_row_meta', 'block_ai_append_plugin_rating', 10, 4 );
