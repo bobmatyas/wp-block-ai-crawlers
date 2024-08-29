@@ -2,13 +2,13 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.5.3
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tell AI crawlers not to access your site to train their models.
+Tells AI companies not to access and scrape your site for AI.
 
 == Description ==
 
@@ -71,6 +71,15 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.3.9 =
+- New: Block PetalBot
+- New: Block AI2Bot
+- New: Block Webz.io
+- New: Block OpenAI Search Bot (SearchGPT)
+- Enhancement: Alphabetize list of blocked crawlers
+- Enhancement: Indicate compatibility with WordPress v6.6
+- Enhancement: Add quick link to settings and nudge for rating on plugins page
 
 = 1.3.8 =
 - Maintenance: Auto-deply from Github fixed / bumped version number
