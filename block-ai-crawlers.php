@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.3.9
+ * Version:         1.4.0
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -91,7 +91,7 @@ add_filter( 'plugin_action_links', 'block_ai_prepend_plugin_settings_link', 10, 
  */
 function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name ) {
 	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
-		array_unshift( $links_array, '<a href=" ' . get_admin_url() . ' options-general.php?page=block-ai-crawlers">Settings</a>' );
+		array_unshift( $links_array, '<a href="' . get_admin_url() . 'options-general.php?page=block-ai-crawlers">Settings</a>' );
 	}
 	return $links_array;
 }
