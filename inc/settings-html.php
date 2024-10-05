@@ -84,8 +84,13 @@
 							</tr>
 							<tr>
 								<th>ImagesiftBot</th>
-								<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product </p></td>
+								<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product.</p></td>
 								<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>Kangaroo Bot</th>
+								<td><p>Used to power the Australia-focused Kangaroo LLM.</p></td>
+								<td><a href="https://kangaroollm.com.au/kangaroo-bot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Meta-ExternalAgent / Meta-ExternalFetcher</th>
