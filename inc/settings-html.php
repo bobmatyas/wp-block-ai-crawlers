@@ -73,6 +73,11 @@
 								<td><a href="https://developers.facebook.com/docs/sharing/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Friendly Crawler</th>
+								<td><p>Crawls websites to build datasets for machine learning experiments. </p></td>
+								<td><a href="https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Google Extended</th>
 								<td><p>Used by Google to power Gemini (formerly known as Bard)</p></td>
 								<td><a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>

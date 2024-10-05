@@ -40,6 +40,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: cohere-ai\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
+		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
