@@ -108,6 +108,11 @@
 								<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Scrapy</th>
+								<td><p>Blocks the Scrapy bot (used for scraping websites)</p></td>
+								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Timpibot</th>
 								<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
 								<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
