@@ -52,6 +52,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Scrapy\n";
+		$robots .= "User-agent: SentiBot\n";
+		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";

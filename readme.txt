@@ -73,6 +73,7 @@ No. Search engines follow different `robots.txt` rules.
 == Changelog ==
 
 = 1.4.0 =
+- New: Block sentibot
 - New: Block FriendlyCrawler
 - New: Block Scrapy
 - Fix: Broken link to settings page from Plugins page
