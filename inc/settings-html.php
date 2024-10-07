@@ -39,52 +39,62 @@
 							</tr>
 							<tr>
 								<th>Bytespider</th>
-								<td><p>Used by TikTok for AI training</p></td>
+								<td><p>Used by TikTok for AI training.</p></td>
 								<td><a href="https://darkvisitors.com/agents/bytespider" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Cohere</th>
-								<td><p>Used by Cohere to scrape data for AI training</p></td>
+								<td><p>Used by Cohere to scrape data for AI training.</p></td>
 								<td><a href="https://darkvisitors.com/agents/cohere-ai" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>ChatGPT</th>
-								<td><p>Used by OpenAI</p></td>
+								<td><p>Used by OpenAI to power ChatGPT.</p></td>
 								<td><a href="https://platform.openai.com/docs/plugins/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>ClaudeBot and Claude-Web</th>
-								<td><p>Used by Anthropic's Claude</p></td>
+								<td><p>Used by Anthropic's Claude.</p></td>
 								<td><a href="https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>CommonCrawl</th>
-								<td><p>Compiles datasets used to train AI models</p></td>
+								<td><p>Compiles datasets used to train AI models.</p></td>
 								<td><a href="https://commoncrawl.org/big-picture/frequently-asked-questions/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Diffbot</th>
-								<td><p>Used by Diffbot to scrape data for AI training</p></td>
+								<td><p>Used by Diffbot to scrape data for AI training.</p></td>
 								<td><a href="https://docs.diffbot.com/reference/crawl-introduction" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>FacebookBot</th>
-								<td><p>Used by Meta (Facebook) for their AI</p></td>
+								<td><p>Used by Meta (Facebook) for their AI.</p></td>
 								<td><a href="https://developers.facebook.com/docs/sharing/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Friendly Crawler</th>
+								<td><p>Crawls websites to build datasets for machine learning experiments. </p></td>
+								<td><a href="https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Google Extended</th>
-								<td><p>Used by Google to power Gemini (formerly known as Bard)</p></td>
+								<td><p>Used by Google to power Gemini (formerly known as Bard).</p></td>
 								<td><a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>ImagesiftBot</th>
-								<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product </p></td>
+								<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product.</p></td>
 								<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Kangaroo Bot</th>
+								<td><p>Used to power the Australia-focused Kangaroo LLM.</p></td>
+								<td><a href="https://kangaroollm.com.au/kangaroo-bot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Meta-ExternalAgent / Meta-ExternalFetcher</th>
-								<td><p>Used by Meta to train AI products</p></td>
+								<td><p>Used by Meta (Facebook) to train AI products.</p></td>
 								<td><a href="https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
@@ -94,13 +104,23 @@
 							</tr>
 							<tr>
 								<th>Omgilibot</th>
-								<td><p>Used by Omigili to scrape data for AI training</p></td>
+								<td><p>Used by Omigili to scrape data for AI training.</p></td>
 								<td><a href="https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>PerplexityBot</th>
-								<td><p>Used by Perplexity for their AI products</p></td>
+								<td><p>Used by Perplexity for their AI products.</p></td>
 								<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>Scrapy</th>
+								<td><p>Blocks the Scrapy bot (used for scraping websites).</p></td>
+								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>SentiBot</th>
+								<td><p>Blocks SentiOne's AI-powered social media listening and analysis tools.</p></td>
+								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Timpibot</th>

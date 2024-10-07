@@ -2,42 +2,57 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.6
+Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 1.3.9
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tells AI companies not to access and scrape your site for AI.
+Tells AI (Artificial Intelligence) companies not to scrap your site for their AI products.
 
 == Description ==
 
-Tells AI crawlers (such as OpenAI ChatGPT) not to use your website as training data for their Artificial Intelligence (AI) products. It does this by updating your site's `robots.txt` to block common AI crawlers and scrapers. This should prevent your content from being used to traing Large Language Models (LLMs). 
+# Protect Your Content from AI Scraping
 
-It blocks these AI crawlers and bots:
+This plugin helps you prevent AI crawlers from using your content as training data for their products. By updating your site's `robots.txt`, it blocks common AI crawlers and scrapers, aiming to protect your content from being used in the training of Large Language Models (LLMs).
 
-- **ChatGPT and GPTBot** - Crawlers and web browser used by OpenAI
-- **Google Extended** - Crawler used for Google's Gemini (formerly Google Bard) AI training
-- **FacebookBot** - Crawler used for Facebook's AI training
-- **Meta** - Blocks crawlers used by Meta AI training
-- **CommonCrawl** - Crawler that compiles datasets used to train AI models
-- **Anthropic AI / Claude** - Crawler used by Anthropic
-- **Omgili** - Crawler used by Omgili for AI training
-- **Bytespider** - Crawler used by TikTok for AI training 
-- **PerplexityBot** - Used by Perplexity for its AI products
-- **Applebot** - Used by Apple to train its AI products
-- **Cohere** - Crawler used by Cohere AI training 
-- **DiffBot** - Crawler used by Diffbot for AI training 
-- **Imagesift** - Crawler used by used by Imagesift for images 
-- ... and more!
+## Features
 
-## Experimental Meta Tags
+### Blocks AI Crawlers
 
-The plugin adds the "noai, noimageai" directive to your site's meta tags. These tags tell AI bots not to use your content as part of their data sets. These are experimental and they have not been standardized. 
+Includes:
 
-## Disclaimer
+  - **OpenAI** - Blocks crawlers used for ChatGPT
+  - **Google** - Blocks crawlers used by Google's Gemini AI products
+  - **Facebook / Meta** - Used for Facebook's AI training
+  - **Anthropic AI** - Blocks crawlers used by Anthropic  
+  - **Perplexity** - Block crawlers used by Perplexity
+  - **Applebot** - Blocks crawlers used by Apple
+  - ... and more!
 
-*Note:* While the plugin adds these markers, it is up to the crawlers themeselves to honor these requests.
+### Experimental Meta Tags
+
+The plugin adds the "noai, noimageai" directive to your site's meta tags, instructing AI bots not to use your content in their datasets. Please note that these tags are experimental and have not been standardized.
+
+## Installation
+
+1. Download the plugin zip file.
+2. Go to your WordPress admin panel.
+3. Navigate to Plugins > Add New > Upload Plugin.
+4. Choose the zip file and click "Install Now."
+5. Activate the plugin.
+
+## Usage
+
+After activation, the plugin will automatically update your `robots.txt` and add the necessary meta tags. No further configuration is required, but you can check the settings page for a full list of blocked crawlers.
+
+## Limitations
+
+While this plugin aims to block specified crawlers, it cannot guarantee complete protection against all forms of scraping, as some bots may disregard `robots.txt` directives.
+
+## Support
+
+For questions or support, [please post on the forums](https://wordpress.org/support/plugin/block-ai-crawlers/) or [on GitHub](https://github.com/bobmatyas/wp-block-ai-crawlers/issues).
 
 == Installation ==
 
@@ -55,6 +70,14 @@ Unfortunately, no. However, it does tell bots that your site shouldn't be used f
 
 The plugin adds directives to the `robots.txt` file to tell AI crawlers that they shouldn't index your site. It also adds the `noai` meta tag to your site's header to do the same.
 
+= How often is this updated? =
+
+I try to keep up with new crawlers and update the block list regularly.
+
+= Can I suggest crawlers for blocking? =
+
+Yes! please share suggestions on [the forums](https://wordpress.org/support/plugin/block-ai-crawlers/) or [on GitHub](https://github.com/bobmatyas/wp-block-ai-crawlers/issues).
+
 = What if I already have a `robots.txt` file on my web server? =
 
 If you have a physical `robots.txt` file on your web server, you won't be able to activate this plugin. The plugin only works when using WordPress' built-in virtual `robots.txt`.
@@ -71,6 +94,14 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.4.0 =
+- New: Block Kangaroo Bot
+- New: Block sentibot
+- New: Block FriendlyCrawler
+- New: Block Scrapy
+- Fix: Broken link to settings page from Plugins page
+- Enhancement: Improve `readme.md` and `readme.txt`
 
 = 1.3.9 =
 - New: Block PetalBot

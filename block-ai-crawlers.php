@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.3.9
+ * Version:         1.4.0
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -40,9 +40,11 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: cohere-ai\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
+		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
+		$robots .= "User-agent: Kangaroo Bot\n";
 		$robots .= "User-agent: Meta-ExternalAgent\n";
 		$robots .= "User-agent: Meta-ExternalFetcher\n";
 		$robots .= "User-agent: OAI-SearchBot\n";
@@ -50,6 +52,9 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Omgilibot\n";
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
+		$robots .= "User-agent: Scrapy\n";
+		$robots .= "User-agent: SentiBot\n";
+		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";
@@ -91,7 +96,7 @@ add_filter( 'plugin_action_links', 'block_ai_prepend_plugin_settings_link', 10, 
  */
 function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name ) {
 	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
-		array_unshift( $links_array, '<a href=" ' . get_admin_url() . ' options-general.php?page=block-ai-crawlers">Settings</a>' );
+		array_unshift( $links_array, '<a href="' . get_admin_url() . 'options-general.php?page=block-ai-crawlers">Settings</a>' );
 	}
 	return $links_array;
 }
