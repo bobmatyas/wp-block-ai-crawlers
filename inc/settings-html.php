@@ -133,6 +133,11 @@
 								<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>TurnitinBot</th>
+								<td><p>Used by TurnitinBot to scrape data for plagiarism detection</p></td>
+								<td><a href="https://www.turnitin.com/robot/crawlerinfo.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Webzio</th>
 								<td><p>Used by Webz.io for their social listening and intelligence platforms.</p></td>
 								<td><a href="https://webz.io/bot.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>

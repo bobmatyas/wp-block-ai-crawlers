@@ -96,7 +96,8 @@ No. Search engines follow different `robots.txt` rules.
 == Changelog ==
 
 = 1.4.1 =
-
+= New: Block Turnitinbot
+- New: Block Ai2Bot-Dolma
 - Enhancement: WordPress 6.7 compatibility
 
 = 1.4.0 =
