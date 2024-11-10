@@ -29,6 +29,7 @@ require __DIR__ . '/inc/settings.php';
 function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block AI Crawlers\n\n";
 		$robots .= "User-agent: AI2Bot\n";
+		$robots .= "User-agent: Ai2Bot-Dolma\n";
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";

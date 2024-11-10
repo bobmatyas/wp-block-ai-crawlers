@@ -28,6 +28,11 @@
 								<td><a href="https://allenai.org/crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Ai2Bot-Dolma</th>
+								<td><p>Generates data sets used to train open language models</p></td>
+								<td><a href="https://allenai.org/dolma" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>AmazonBot</th>
 								<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
 								<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
