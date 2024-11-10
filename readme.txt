@@ -2,9 +2,9 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.6.2
+Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,10 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.4.1 =
+
+- Enhancement: WordPress 6.7 compatibility
 
 = 1.4.0 =
 - New: Block Kangaroo Bot
