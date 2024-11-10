@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.4.0
+ * Version:         1.4.1
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -29,6 +29,7 @@ require __DIR__ . '/inc/settings.php';
 function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block AI Crawlers\n\n";
 		$robots .= "User-agent: AI2Bot\n";
+		$robots .= "User-agent: Ai2Bot-Dolma\n";
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
@@ -56,6 +57,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
+		$robots .= "User-agent: TurnitinBot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";
 		$robots .= "User-agent: webzio-extended\n";

@@ -28,6 +28,11 @@
 								<td><a href="https://allenai.org/crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Ai2Bot-Dolma</th>
+								<td><p>Generates data sets used to train open language models</p></td>
+								<td><a href="https://allenai.org/dolma" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>AmazonBot</th>
 								<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
 								<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
@@ -126,6 +131,11 @@
 								<th>Timpibot</th>
 								<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
 								<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>TurnitinBot</th>
+								<td><p>Used by Turnitin to scrape data for plagiarism detection</p></td>
+								<td><a href="https://www.turnitin.com/robot/crawlerinfo.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Webzio</th>
