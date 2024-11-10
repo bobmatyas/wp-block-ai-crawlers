@@ -134,7 +134,7 @@
 							</tr>
 							<tr>
 								<th>TurnitinBot</th>
-								<td><p>Used by TurnitinBot to scrape data for plagiarism detection</p></td>
+								<td><p>Used by Turnitin to scrape data for plagiarism detection</p></td>
 								<td><a href="https://www.turnitin.com/robot/crawlerinfo.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
