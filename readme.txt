@@ -4,7 +4,7 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,8 +95,11 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.4.2 =
+- New: Block PanguBot
+
 = 1.4.1 =
-= New: Block Turnitinbot
+- New: Block Turnitinbot
 - New: Block Ai2Bot-Dolma
 - Enhancement: WordPress 6.7 compatibility
 
