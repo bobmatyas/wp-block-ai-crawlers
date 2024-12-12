@@ -113,6 +113,11 @@
 								<td><a href="https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>PanguBot</th>
+								<td><p>Used by Huawei to download data for the Large Language Model (LLM) called PanGu.</p></td>
+								<td><a href="https://darkvisitors.com/agents/pangubot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>PerplexityBot</th>
 								<td><p>Used by Perplexity for their AI products.</p></td>
 								<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
