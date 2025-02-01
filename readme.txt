@@ -95,6 +95,11 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.4.3 =
+- New: Block SemrushBot
+- New: Block SemrushBot
+- New: Block Crawlspace
+
 = 1.4.2 =
 - New: Block PanguBot
 

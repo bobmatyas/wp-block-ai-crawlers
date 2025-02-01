@@ -133,9 +133,14 @@
 								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
-								<th>SentiBot</th>
-								<td><p>Blocks SentiOne's AI-powered social media listening and analysis tools.</p></td>
+								<th>Scrapy</th>
+								<td><p>Blocks the Scrapy bot (used for scraping websites).</p></td>
 								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>SemrushBot</th>
+								<td><p>Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.</p></td>
+								<td><a href="https://www.semrush.com/bot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>Timpibot</th>
