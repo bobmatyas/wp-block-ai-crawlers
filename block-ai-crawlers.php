@@ -39,6 +39,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: ClaudeBot\n";
 		$robots .= "User-agent: Claude-Web\n";
 		$robots .= "User-agent: cohere-ai\n";
+		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: FriendlyCrawler\n";
@@ -132,7 +133,7 @@ function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 		. '.rate-stars svg {fill:' . $stars_color . ';}'
 		. '</style>';
 	}
- 
+
 	return $links_array;
 }
 

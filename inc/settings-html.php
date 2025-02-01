@@ -68,6 +68,11 @@
 								<td><a href="https://commoncrawl.org/big-picture/frequently-asked-questions/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
+								<th>Crawlspace</th>
+								<td><p>A web scraper that can be used to extract data for AI training.</p></td>
+								<td><a href="https://crawlspace.dev/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
 								<th>Diffbot</th>
 								<td><p>Used by Diffbot to scrape data for AI training.</p></td>
 								<td><a href="https://docs.diffbot.com/reference/crawl-introduction" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
