@@ -39,6 +39,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: ClaudeBot\n";
 		$robots .= "User-agent: Claude-Web\n";
 		$robots .= "User-agent: cohere-ai\n";
+		$robots .= "User-agent: cohere-training-data-crawler\n";
 		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
@@ -56,6 +57,9 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Scrapy\n";
+		$robots .= "User-agent: SemrushBot\n";
+		$robots .= "User-agent: SemrushBot-OCOB\n";
+		$robots .= "User-agent: SemrushBot-FT\n";
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
