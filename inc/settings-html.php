@@ -48,11 +48,6 @@
 								<td><a href="https://darkvisitors.com/agents/bytespider" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
-								<th>Cohere</th>
-								<td><p>Used by Cohere to scrape data for AI training.</p></td>
-								<td><a href="https://darkvisitors.com/agents/cohere-ai" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
 								<th>ChatGPT</th>
 								<td><p>Used by OpenAI to power ChatGPT.</p></td>
 								<td><a href="https://platform.openai.com/docs/plugins/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
@@ -61,6 +56,11 @@
 								<th>ClaudeBot and Claude-Web</th>
 								<td><p>Used by Anthropic's Claude.</p></td>
 								<td><a href="https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
+							</tr>
+							<tr>
+								<th>Cohere and cohere-training-data-crawler</th>
+								<td><p>Used by Cohere to scrape data for AI training.</p></td>
+								<td><a href="https://cohere.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
 							</tr>
 							<tr>
 								<th>CommonCrawl</th>
