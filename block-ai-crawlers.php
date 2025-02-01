@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.4.2
+ * Version:         1.4.3
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -39,6 +39,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: ClaudeBot\n";
 		$robots .= "User-agent: Claude-Web\n";
 		$robots .= "User-agent: cohere-ai\n";
+		$robots .= "User-agent: cohere-training-data-crawler\n";
+		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: FriendlyCrawler\n";
@@ -55,6 +57,9 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Scrapy\n";
+		$robots .= "User-agent: SemrushBot\n";
+		$robots .= "User-agent: SemrushBot-OCOB\n";
+		$robots .= "User-agent: SemrushBot-FT\n";
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
@@ -132,7 +137,7 @@ function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 		. '.rate-stars svg {fill:' . $stars_color . ';}'
 		. '</style>';
 	}
- 
+
 	return $links_array;
 }
 
