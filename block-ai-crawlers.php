@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.4.3
+ * Version:         1.5.0
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -27,7 +27,7 @@ require __DIR__ . '/inc/settings.php';
  * @return string
  */
 function block_ai_robots_txt( $robots ) {
-		$robots .= "\n# Block AI Crawlers\n\n";
+		$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
 		$robots .= "User-agent: AI2Bot\n";
 		$robots .= "User-agent: Ai2Bot-Dolma\n";
 		$robots .= "User-agent: AmazonBot\n";
@@ -68,8 +68,24 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: webzio\n";
 		$robots .= "User-agent: webzio-extended\n";
 		$robots .= "Disallow: /\n\n";
-		$robots .= "# End Block AI Crawlers\n";
+		$robots .= "# End Block AI Crawlers - Built-In Rules\n";
+		$robots .= block_ai_robots_txt_custom_rules();
 		return ( $robots );
+}
+
+/**
+ * Retrieves custom rules for robots.txt from the settings page.
+ *
+ * @return string Custom rules for robots.txt.
+ */
+function block_ai_robots_txt_custom_rules() {
+	// Retrieve the user-inputted entries from the settings page.
+	$custom_robots_txt = get_option( 'block_ai_crawlers_custom_robots_txt', '' );
+
+	// Output the custom entries to the robots.txt file.
+	if ( ! empty( $custom_robots_txt ) ) {
+		return "\n# Start Block AI Crawlers - Custom Rules\n" . $custom_robots_txt . "\n# End Block AI Crawlers - Custom Rules\n";
+	}
 }
 
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
@@ -142,3 +158,44 @@ function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 }
 
 add_filter( 'plugin_row_meta', 'block_ai_append_plugin_rating', 10, 4 );
+
+add_action( 'admin_init', 'block_ai_crawlers_settings' );
+
+
+/**
+ * Registers settings and sections for the Block AI Crawlers plugin.
+ */
+function block_ai_crawlers_settings() {
+	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt' );
+
+	add_settings_section(
+		'block_ai_crawlers_robots_section',
+		'',
+		'block_ai_crawlers_robots_section_callback',
+		'block-ai-crawlers-robots'
+	);
+
+	add_settings_field(
+		'block_ai_crawlers_robots_txt',
+		'Robots.txt Content',
+		'block_ai_crawlers_robots_txt_callback',
+		'block-ai-crawlers-robots',
+		'block_ai_crawlers_robots_section'
+	);
+}
+
+
+/**
+ * Callback function for the custom robots.txt entries section.
+ */
+function block_ai_crawlers_robots_section_callback() {
+	echo '<p>This section can be used to add custom entries to the <code>robots.txt</code> file.</p>';
+}
+
+/**
+ * Callback function for the robots.txt entries field.
+ */
+function block_ai_crawlers_robots_txt_callback() {
+	$robots_txt = get_option( 'block_ai_crawlers_custom_robots_txt', '' );
+	echo '<textarea name="block_ai_crawlers_custom_robots_txt" rows="10" cols="50" class="large-text">' . esc_textarea( $robots_txt ) . '</textarea>';
+}

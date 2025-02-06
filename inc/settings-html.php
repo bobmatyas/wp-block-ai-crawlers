@@ -178,7 +178,19 @@
 					<p>The <code>"noai, noimageai"</code> directive has been added to your site's meta tags. Meta Tags are standardized, but this directive is experimental.</p>
 				</details>
 			</section>
+			<section>
+    <details>
+        <summary><h3>Custom Robots.txt Entries</h3></summary>
+        <form method="post" action="options.php">
+            <?php
+           settings_fields('block_ai_crawlers_options');
+            do_settings_sections('block-ai-crawlers-robots');
+            ?>
 
+            <?php submit_button(); ?>
+        </form>
+    </details>
+</section>
 			<section>
 				<h3>Leave a Review</h3>
 				<hr>

@@ -54,6 +54,14 @@
   padding: 10px;
 }
 
+.block-ai-container table.form-table {
+	border: none;
+}
+k-ai-container table.form-table td,
+.block-ai-container table.form-table th {
+	padding: 0;
+}
+
 .block-ai-container summary h3 {
   display: inline-block;
   cursor: pointer;
