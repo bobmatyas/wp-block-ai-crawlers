@@ -34,6 +34,10 @@ Includes:
 
 The plugin adds the "noai, noimageai" directive to your site's meta tags, instructing AI bots not to use your content in their datasets. Please note that these tags are experimental and have not been standardized.
 
+### Custom robots.txt Rules
+
+Have custom entries for your robots.txt file? You can now add them directly through the plugin!
+
 ## Installation
 
 1. Download the plugin zip file.
@@ -94,6 +98,9 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.5.0 =
+- Enhancement: Adds ability for custom robots.txt rules
 
 = 1.4.3 =
 - New: Block SemrushBot
