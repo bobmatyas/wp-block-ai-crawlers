@@ -20,155 +20,54 @@
 			<section>
 				<details> 	
 					<summary><h3>Blocked Crawlers</h3></summary>
-					<table class="form-table">
+
+					<?php
+					$crawlers = '[
+						{"name": "AI2Bot", "description": "Explores sites for web content that is used to train open language models", "link": "https://allenai.org/crawler"},
+						{"name": "Ai2Bot-Dolma", "description": "Generates data sets used to train open language models", "link": "https://allenai.org/dolma"},
+						{"name": "AmazonBot", "description": "Used by Amazon\'s Alexa AI to provide AI answers.", "link": "https://developer.amazon.com/amazonbot"},
+						{"name": "AppleBot", "description": "Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.", "link": "https://support.apple.com/en-us/119829"},
+						{"name": "Bytespider", "description": "Used by TikTok for AI training.", "link": "https://darkvisitors.com/agents/bytespider"},
+						{"name": "ChatGPT", "description": "Used by OpenAI to power ChatGPT.", "link": "https://platform.openai.com/docs/plugins/bot"},
+						{"name": "ClaudeBot and Claude-Web", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+						{"name": "Cohere and cohere-training-data-crawler", "description": "Used by Cohere to scrape data for AI training.", "link": "https://cohere.com/about"},
+						{"name": "CommonCrawl", "description": "Compiles datasets used to train AI models.", "link": "https://commoncrawl.org/big-picture/frequently-asked-questions/"},
+						{"name": "Crawlspace", "description": "A web scraper that can be used to extract data for AI training.", "link": "https://crawlspace.dev/"},
+						{"name": "Diffbot", "description": "Used by Diffbot to scrape data for AI training.", "link": "https://docs.diffbot.com/reference/crawl-introduction"},
+						{"name": "FacebookBot", "description": "Used by Meta (Facebook) for their AI.", "link": "https://developers.facebook.com/docs/sharing/bot"},
+						{"name": "Friendly Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/"},
+						{"name": "Google Extended", "description": "Used by Google to power Gemini (formerly known as Bard).", "link": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers"},
+						{"name": "ImagesiftBot", "description": "Used by Hive\'s Imagesift tool that scrapes images. This may be used for the company\'s generative AI product.", "link": "https://imagesift.com/about"},
+						{"name": "Kangaroo Bot", "description": "Used to power the Australia-focused Kangaroo LLM.", "link": "https://kangaroollm.com.au/kangaroo-bot/"},
+						{"name": "Meta-ExternalAgent / Meta-ExternalFetcher", "description": "Used by Meta (Facebook) to train AI products.", "link": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"},
+						{"name": "OAI-SearchBot", "description": "Used by OpenAI for their SearchGPT product.", "link": "https://platform.openai.com/docs/bots"},
+						{"name": "Omgilibot", "description": "Used by Omigili to scrape data for AI training.", "link": "https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/"},
+						{"name": "PanguBot", "description": "Used by Huawei to download data for the Large Language Model (LLM) called PanGu.", "link": "https://darkvisitors.com/agents/pangubot"},
+						{"name": "PerplexityBot", "description": "Used by Perplexity for their AI products.", "link": "https://docs.perplexity.ai/docs/perplexitybot"},
+						{"name": "Scrapy", "description": "Blocks the Scrapy bot (used for scraping websites).", "link": "https://scrapy.org/"},
+						{"name": "SemrushBot", "description": "Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.", "link": "https://www.semrush.com/bot/"},
+						{"name": "Timpibot", "description": "Used by Timpi; likely for their Wilson AI Product.", "link": "https://timpi.io/wilson-ai/"},
+						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
+						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
+						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
+						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
+					]';
+
+					$crawlers_array = json_decode( $crawlers, true );
+					?>
+
+					<table class="crawler-table">
 						<tbody>
-							<tr>
-								<th>AI2Bot</th>
-								<td><p>Explores sites for web content that is used to train open language models</p></td>
-								<td><a href="https://allenai.org/crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Ai2Bot-Dolma</th>
-								<td><p>Generates data sets used to train open language models</p></td>
-								<td><a href="https://allenai.org/dolma" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>AmazonBot</th>
-								<td><p>Used by Amazon's Alexa AI to provide AI answers.</p></td>
-								<td><a href="https://developer.amazon.com/amazonbot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>AppleBot</th>
-								<td><p>Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.</p></td>
-								<td><a href="https://support.apple.com/en-us/119829" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Bytespider</th>
-								<td><p>Used by TikTok for AI training.</p></td>
-								<td><a href="https://darkvisitors.com/agents/bytespider" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>ChatGPT</th>
-								<td><p>Used by OpenAI to power ChatGPT.</p></td>
-								<td><a href="https://platform.openai.com/docs/plugins/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>ClaudeBot and Claude-Web</th>
-								<td><p>Used by Anthropic's Claude.</p></td>
-								<td><a href="https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Cohere and cohere-training-data-crawler</th>
-								<td><p>Used by Cohere to scrape data for AI training.</p></td>
-								<td><a href="https://cohere.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>CommonCrawl</th>
-								<td><p>Compiles datasets used to train AI models.</p></td>
-								<td><a href="https://commoncrawl.org/big-picture/frequently-asked-questions/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Crawlspace</th>
-								<td><p>A web scraper that can be used to extract data for AI training.</p></td>
-								<td><a href="https://crawlspace.dev/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Diffbot</th>
-								<td><p>Used by Diffbot to scrape data for AI training.</p></td>
-								<td><a href="https://docs.diffbot.com/reference/crawl-introduction" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>FacebookBot</th>
-								<td><p>Used by Meta (Facebook) for their AI.</p></td>
-								<td><a href="https://developers.facebook.com/docs/sharing/bot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Friendly Crawler</th>
-								<td><p>Crawls websites to build datasets for machine learning experiments. </p></td>
-								<td><a href="https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Google Extended</th>
-								<td><p>Used by Google to power Gemini (formerly known as Bard).</p></td>
-								<td><a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>ImagesiftBot</th>
-								<td><p>Used by Hive's Imagesift tool that scrapes images. This may be used for the company's generative AI product.</p></td>
-								<td><a href="https://imagesift.com/about" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Kangaroo Bot</th>
-								<td><p>Used to power the Australia-focused Kangaroo LLM.</p></td>
-								<td><a href="https://kangaroollm.com.au/kangaroo-bot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Meta-ExternalAgent / Meta-ExternalFetcher</th>
-								<td><p>Used by Meta (Facebook) to train AI products.</p></td>
-								<td><a href="https://developers.facebook.com/docs/sharing/webmasters/web-crawlers" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>OAI-SearchBot</th>
-								<td><p>Used by OpenAI for their SearchGPT product.</p></td>
-								<td><a href="https://platform.openai.com/docs/bots" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Omgilibot</th>
-								<td><p>Used by Omigili to scrape data for AI training.</p></td>
-								<td><a href="https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>PanguBot</th>
-								<td><p>Used by Huawei to download data for the Large Language Model (LLM) called PanGu.</p></td>
-								<td><a href="https://darkvisitors.com/agents/pangubot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>PerplexityBot</th>
-								<td><p>Used by Perplexity for their AI products.</p></td>
-								<td><a href="https://docs.perplexity.ai/docs/perplexitybot" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Scrapy</th>
-								<td><p>Blocks the Scrapy bot (used for scraping websites).</p></td>
-								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Scrapy</th>
-								<td><p>Blocks the Scrapy bot (used for scraping websites).</p></td>
-								<td><a href="https://scrapy.org/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>SemrushBot</th>
-								<td><p>Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.</p></td>
-								<td><a href="https://www.semrush.com/bot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Timpibot</th>
-								<td><p>Used by Timpi; likely for their Wilson AI Product.</p></td>
-								<td><a href="https://timpi.io/wilson-ai/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>TurnitinBot</th>
-								<td><p>Used by Turnitin to scrape data for plagiarism detection</p></td>
-								<td><a href="https://www.turnitin.com/robot/crawlerinfo.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Webzio</th>
-								<td><p>Used by Webz.io for their social listening and intelligence platforms.</p></td>
-								<td><a href="https://webz.io/bot.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>Webzio-Extended</th>
-								<td><p>Used by Webz.io for AI training.</p></td>
-								<td><a href="https://webz.io/bot.html" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
-							<tr>
-								<th>YouBot</th>
-								<td><p>Used by You.com to train AI products.</p></td>
-								<td><a href="https://about.you.com/es/youbot/" target=_blank>More Info <span class="dashicons dashicons-external link"></span></a></td>
-							</tr>
+							<?php foreach ( $crawlers_array as $crawler ) : ?>
+								<tr>
+									<th class="form-table-header"><?php echo esc_html( $crawler['name'] ); ?></th>
+									<td><p><?php echo esc_html( $crawler['description'] ); ?></p></td>
+									<td><a href="<?php echo esc_url( $crawler['link'] ); ?>" target="_blank">More Info <span class="dashicons dashicons-external link"></span></a></td>
+								</tr>
+							<?php endforeach; ?>
 						</tbody>
 					</table>
+
 				</details>
 			</section>
 
@@ -179,18 +78,18 @@
 				</details>
 			</section>
 			<section>
-    <details>
-        <summary><h3>Custom Robots.txt Entries</h3></summary>
-        <form method="post" action="options.php">
-            <?php
-           settings_fields('block_ai_crawlers_options');
-            do_settings_sections('block-ai-crawlers-robots');
-            ?>
+				<details>
+					<summary><h3>Custom Robots.txt Entries</h3></summary>
+					<form method="post" action="options.php">
+						<?php
+							settings_fields( 'block_ai_crawlers_options' );
+							do_settings_sections( 'block-ai-crawlers-robots' );
+						?>
 
-            <?php submit_button(); ?>
-        </form>
-    </details>
-</section>
+						<?php submit_button(); ?>
+					</form>
+				</details>
+			</section>
 			<section>
 				<h3>Leave a Review</h3>
 				<hr>
