@@ -13,7 +13,7 @@ add_action( 'admin_menu', 'block_ai_crawlers_add_settings_menu' );
  * @return void
  */
 function block_ai_crawlers_wp_admin_style() {
-	wp_enqueue_style( 'custom_wp_admin_css', plugins_url( '/css/admin-style.css', __FILE__ ) );
+	wp_enqueue_style( 'custom_wp_admin_css', plugins_url( '/css/admin-style.css', __FILE__ ), array(), '1.5.0' );
 }
 add_action( 'admin_enqueue_scripts', 'block_ai_crawlers_wp_admin_style' );
 

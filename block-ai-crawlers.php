@@ -171,14 +171,14 @@ function block_ai_crawlers_settings() {
 	add_settings_section(
 		'block_ai_crawlers_robots_section',
 		'',
-		'block_ai_crawlers_robots_section_callback',
+		'block_ai_crawlers_custom_robots_txt_section_callback',
 		'block-ai-crawlers-robots'
 	);
 
 	add_settings_field(
 		'block_ai_crawlers_robots_txt',
 		'Robots.txt Content',
-		'block_ai_crawlers_robots_txt_callback',
+		'block_ai_crawlers_custom_robots_txt_field_callback',
 		'block-ai-crawlers-robots',
 		'block_ai_crawlers_robots_section'
 	);
@@ -188,14 +188,14 @@ function block_ai_crawlers_settings() {
 /**
  * Callback function for the custom robots.txt entries section.
  */
-function block_ai_crawlers_robots_section_callback() {
+function block_ai_crawlers_custom_robots_txt_section_callback() {
 	echo '<p>This section can be used to add custom entries to the <code>robots.txt</code> file.</p>';
 }
 
 /**
  * Callback function for the robots.txt entries field.
  */
-function block_ai_crawlers_robots_txt_callback() {
+function block_ai_crawlers_custom_robots_txt_field_callback() {
 	$robots_txt = get_option( 'block_ai_crawlers_custom_robots_txt', '' );
 	echo '<textarea name="block_ai_crawlers_custom_robots_txt" rows="10" cols="50" class="large-text">' . esc_textarea( $robots_txt ) . '</textarea>';
 }
