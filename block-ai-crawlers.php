@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.0
+ * Version:         1.5.1
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -30,6 +30,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
 		$robots .= "User-agent: AI2Bot\n";
 		$robots .= "User-agent: Ai2Bot-Dolma\n";
+		$robots .= "User-agent: aiHitBot\n";
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
@@ -37,25 +38,30 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: CCBot\n";
 		$robots .= "User-agent: ChatGPT-User\n";
 		$robots .= "User-agent: ClaudeBot\n";
-		$robots .= "User-agent: Claude-Web\n";
+		$robots .= "User-agent: Claude-User\n";
+		$robots .= "User-agent: Claude-SearchBot\n";
 		$robots .= "User-agent: cohere-ai\n";
 		$robots .= "User-agent: cohere-training-data-crawler\n";
+		$robots .= "User-agent: Cotoyogi\n";
 		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: FacebookBot\n";
+		$robots .= "User-agent: Factset_spyderbot\n";
+		$robots .= "User-agent: FirecrawlAgent\n";
 		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
 		$robots .= "User-agent: Kangaroo Bot\n";
-		$robots .= "User-agent: Meta-ExternalAgent\n";
-		$robots .= "User-agent: Meta-ExternalFetcher\n";
+		$robots .= "User-agent: meta-externalagent\n";
+		$robots .= "User-agent: Meta-externalfetcher\n";
 		$robots .= "User-agent: OAI-SearchBot\n";
 		$robots .= "User-agent: Omgili\n";
 		$robots .= "User-agent: Omgilibot\n";
 		$robots .= "User-agent: PanguBot\n";
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
+		$robots .= "User-agent: Perplexity‑User\n";
 		$robots .= "User-agent: Scrapy\n";
 		$robots .= "User-agent: SemrushBot\n";
 		$robots .= "User-agent: SemrushBot-OCOB\n";
