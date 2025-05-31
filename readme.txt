@@ -2,13 +2,13 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 5.6
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tells AI (Artificial Intelligence) companies not to scrap your site for their AI products.
+Tell AI (Artificial Intelligence) companies not to scrape your site for their AI products.
 
 == Description ==
 
@@ -99,11 +99,21 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.5.1 =
+- New: Block aiHitBot
+- New: Block Cotoyogi
+- New: Block Factset
+- New: Block Firecrawl
+- New: Block TikTokSpider
+- New: Block Perplexity‑User
+- Update: Meta External Agent and Meta External Fetcher
+- Update: New Claude Bots
+- Update: Indicate WordPress v6.8 compatibility
+
 = 1.5.0 =
 - Enhancement: Adds ability for custom robots.txt rules
 
 = 1.4.3 =
-- New: Block SemrushBot
 - New: Block SemrushBot
 - New: Block Crawlspace
 
