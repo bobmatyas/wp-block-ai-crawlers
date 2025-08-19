@@ -53,6 +53,7 @@
 						{"name": "PanguBot", "description": "Used by Huawei to download data for the Large Language Model (LLM) called PanGu.", "link": "https://darkvisitors.com/agents/pangubot"},
 						{"name": "PerplexityBot", "description": "Used by Perplexity for their AI products.", "link": "https://docs.perplexity.ai/docs/perplexitybot"},
 						{"name": "Perplexity‑User", "description": "Used by Perplexity for their AI products.", "link": "https://perplexity.ai/perplexity-user"},
+						{"name": "Poseidon Research Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://www.poseidonresearch.com/"},
 						{"name": "Scrapy", "description": "Blocks the Scrapy bot (used for scraping websites).", "link": "https://scrapy.org/"},
 						{"name": "SemrushBot", "description": "Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.", "link": "https://www.semrush.com/bot/"},
 						{"name": "ThinkBot", "description": "Used by ThinkBot for AI analysis and analytics.", "link": "https://thinkbot.agency/"},
