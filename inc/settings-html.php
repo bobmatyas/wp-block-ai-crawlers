@@ -23,6 +23,7 @@
 
 					<?php
 					$crawlers = '[
+						{"name": "Addsearchbot, "description": "Web crawler that indexes website content for AddSearch\'s AI-powered site search solution", "link": "https://www.addsearch.com/docs/indexing/whitelisting-addsearch-bot/"},
 						{"name": "AI2Bot", "description": "Explores sites for web content that is used to train open language models", "link": "https://allenai.org/crawler"},
 						{"name": "Ai2Bot-Dolma", "description": "Generates data sets used to train open language models", "link": "https://allenai.org/dolma"},
 						{"name": "aiHitBot", "description": "aiHitdata is a artificial intelligence/machine learning system that uses web scraping to collect data for training AI models.", "link": "https://www.aihitdata.com/about/"},
