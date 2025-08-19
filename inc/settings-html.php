@@ -42,6 +42,8 @@
 						{"name": "Factset_spyderbot", "description": "Used by Factset to scrape data for AI training.", "link": "https://www.factset.com/ai"},
 						{"name": "FirecrawlAgent", "description": "Used by Firecrawl to scrape data for AI training.", "link": "https://www.firecrawl.dev/"},
 						{"name": "Friendly Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/"},
+						{"name": "GoogleAgent-Mariner", "description": "An AI agent created by Google that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a human user.", "link": "https://deepmind.google/models/project-mariner/"},
+						{"name": "Gemini-Deep-Research", "description": "Used by Google to power Gemini Deep Research.", "link": "https://gemini.google/overview/deep-research/?hl=en"},
 						{"name": "Google Extended", "description": "Used by Google to power Gemini (formerly known as Bard).", "link": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers"},
 						{"name": "ImagesiftBot", "description": "Used by Hive\'s Imagesift tool that scrapes images. This may be used for the company\'s generative AI product.", "link": "https://imagesift.com/about"},
 						{"name": "Kangaroo Bot", "description": "Used to power the Australia-focused Kangaroo LLM.", "link": "https://kangaroollm.com.au/kangaroo-bot/"},

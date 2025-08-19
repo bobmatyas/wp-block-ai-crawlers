@@ -52,6 +52,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: FirecrawlAgent\n";
 		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
+		$robots .= "User-agent: GoogleAgent-Mariner\n";
+		$robots .= "User-agent: Gemini-Deep-Research\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
 		$robots .= "User-agent: Kangaroo Bot\n";
