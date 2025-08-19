@@ -38,6 +38,7 @@
 						{"name": "Cotoyogi", "description": "A Japan-based crawler used to train AI models.", "link": "https://ds.rois.ac.jp/en_center8/en_crawler/"},
 						{"name": "Crawlspace", "description": "A web scraper that can be used to extract data for AI training.", "link": "https://crawlspace.dev/"},
 						{"name": "Diffbot", "description": "Used by Diffbot to scrape data for AI training.", "link": "https://docs.diffbot.com/reference/crawl-introduction"},
+						{"name": "EchoboxBot", "description": "Supports company\'s AI-powered social and email management products.", "link": "https://echobox.com"},
 						{"name": "FacebookBot", "description": "Used by Meta (Facebook) for their AI.", "link": "https://developers.facebook.com/docs/sharing/bot"},
 						{"name": "Factset_spyderbot", "description": "Used by Factset to scrape data for AI training.", "link": "https://www.factset.com/ai"},
 						{"name": "FirecrawlAgent", "description": "Used by Firecrawl to scrape data for AI training.", "link": "https://www.firecrawl.dev/"},

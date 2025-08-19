@@ -47,6 +47,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Cotoyogi\n";
 		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
+		$robots .= "User-agent: EchoboxBot\n";
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: Factset_spyderbot\n";
 		$robots .= "User-agent: FirecrawlAgent\n";
