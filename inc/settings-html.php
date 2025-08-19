@@ -55,6 +55,7 @@
 						{"name": "Perplexity‑User", "description": "Used by Perplexity for their AI products.", "link": "https://perplexity.ai/perplexity-user"},
 						{"name": "Scrapy", "description": "Blocks the Scrapy bot (used for scraping websites).", "link": "https://scrapy.org/"},
 						{"name": "SemrushBot", "description": "Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.", "link": "https://www.semrush.com/bot/"},
+						{"name": "ThinkBot", "description": "Used by ThinkBot for AI analysis and analytics.", "link": "https://thinkbot.agency/"},
 						{"name": "TikTokSpider", "description": "Used by Bytedance (TikTok\'s parent company).", "link": ""},
 						{"name": "Timpibot", "description": "Used by Timpi; likely for their Wilson AI Product.", "link": "https://timpi.io/wilson-ai/"},
 						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
