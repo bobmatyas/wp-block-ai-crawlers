@@ -99,6 +99,8 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.5.2 =
+
 = 1.5.1 =
 - New: Block aiHitBot
 - New: Block Cotoyogi

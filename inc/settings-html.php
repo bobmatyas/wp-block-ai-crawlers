@@ -28,6 +28,7 @@
 						{"name": "aiHitBot", "description": "aiHitdata is a artificial intelligence/machine learning system that uses web scraping to collect data for training AI models.", "link": "https://www.aihitdata.com/about/"},
 						{"name": "AmazonBot", "description": "Used by Amazon\'s Alexa AI to provide AI answers.", "link": "https://developer.amazon.com/amazonbot"},
 						{"name": "AppleBot", "description": "Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.", "link": "https://support.apple.com/en-us/119829"},
+						{"name": "BigSur.ai", "description": "Used by BigSur.ai to power their AI Web Agent.", "link": "https://bigsur.ai/"},
 						{"name": "Bytespider", "description": "Used by TikTok for AI training.", "link": "https://darkvisitors.com/agents/bytespider"},
 						{"name": "ChatGPT", "description": "Used by OpenAI to power ChatGPT.", "link": "https://platform.openai.com/docs/plugins/bot"},
 						{"name": "ClaudeBot and Claude-Web", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
@@ -56,6 +57,7 @@
 						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
 						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
 						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
+						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"}
 						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
 					]';
 

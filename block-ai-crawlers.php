@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.1
+ * Version:         1.5.2
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -34,6 +34,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
+		$robots .= "User-agent: bigsur.ai\n";
 		$robots .= "User-agent: Bytespider\n";
 		$robots .= "User-agent: CCBot\n";
 		$robots .= "User-agent: ChatGPT-User\n";
@@ -70,6 +71,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: sentibot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";
+		$robots .= "User-agent: Yak\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";
 		$robots .= "User-agent: webzio-extended\n";
