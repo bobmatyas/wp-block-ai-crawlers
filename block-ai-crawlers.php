@@ -35,6 +35,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
+		$robots .= "User-agent: bedrockbot\n";
 		$robots .= "User-agent: bigsur.ai\n";
 		$robots .= "User-agent: Bytespider\n";
 		$robots .= "User-agent: CCBot\n";
