@@ -65,6 +65,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Omgili\n";
 		$robots .= "User-agent: Omgilibot\n";
 		$robots .= "User-agent: PanguBot\n";
+		$robots .= "User-agent: Panscient\n";
+		$robots .= "User-agent: Panscient.com\n";
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Perplexity‑User\n";

@@ -53,6 +53,7 @@
 						{"name": "OAI-SearchBot", "description": "Used by OpenAI for their SearchGPT product.", "link": "https://platform.openai.com/docs/bots"},
 						{"name": "Omgilibot", "description": "Used by Omigili to scrape data for AI training.", "link": "https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/"},
 						{"name": "PanguBot", "description": "Used by Huawei to download data for the Large Language Model (LLM) called PanGu.", "link": "https://darkvisitors.com/agents/pangubot"},
+						{"name": "Panscient", "description": "Compiles data on businesses and business professionals that is structured using AI and machine learning.", "link": "https://panscient.com"},
 						{"name": "PerplexityBot", "description": "Used by Perplexity for their AI products.", "link": "https://docs.perplexity.ai/docs/perplexitybot"},
 						{"name": "Perplexity‑User", "description": "Used by Perplexity for their AI products.", "link": "https://perplexity.ai/perplexity-user"},
 						{"name": "Poseidon Research Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://www.poseidonresearch.com/"},
@@ -64,7 +65,8 @@
 						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
 						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
 						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
-						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"}
+						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"},
+
 						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
 					]';
 
