@@ -23,8 +23,8 @@
 
 					<?php
 					$crawlers = '[
-						{"name": "Addsearchbot, "description": "Web crawler that indexes website content for AddSearch\'s AI-powered site search solution", "link": "https://www.addsearch.com/docs/indexing/whitelisting-addsearch-bot/"},
-						{"name": "AI2Bot", "description": "Explores sites for web content that is used to train open language models", "link": "https://allenai.org/crawler"},
+						{"name": "Addsearchbot, "description": "Web crawler that indexes website content for AddSearch\'s AI-powered site search solution.", "link": "https://www.addsearch.com/docs/indexing/whitelisting-addsearch-bot/"},
+						{"name": "AI2Bot", "description": "Explores sites for web content that is used to train open language models.", "link": "https://allenai.org/crawler"},
 						{"name": "Ai2Bot-Dolma", "description": "Generates data sets used to train open language models", "link": "https://allenai.org/dolma"},
 						{"name": "aiHitBot", "description": "aiHitdata is a artificial intelligence/machine learning system that uses web scraping to collect data for training AI models.", "link": "https://www.aihitdata.com/about/"},
 						{"name": "AmazonBot", "description": "Used by Amazon\'s Alexa AI to provide AI answers.", "link": "https://developer.amazon.com/amazonbot"},
@@ -44,9 +44,9 @@
 						{"name": "Factset_spyderbot", "description": "Used by Factset to scrape data for AI training.", "link": "https://www.factset.com/ai"},
 						{"name": "FirecrawlAgent", "description": "Used by Firecrawl to scrape data for AI training.", "link": "https://www.firecrawl.dev/"},
 						{"name": "Friendly Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/"},
-						{"name": "GoogleAgent-Mariner", "description": "An AI agent created by Google that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a human user.", "link": "https://deepmind.google/models/project-mariner/"},
 						{"name": "Gemini-Deep-Research", "description": "Used by Google to power Gemini Deep Research.", "link": "https://gemini.google/overview/deep-research/?hl=en"},
 						{"name": "Google Extended", "description": "Used by Google to power Gemini (formerly known as Bard).", "link": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers"},
+						{"name": "GoogleAgent-Mariner", "description": "An AI agent created by Google that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a human user.", "link": "https://deepmind.google/models/project-mariner/"},
 						{"name": "ImagesiftBot", "description": "Used by Hive\'s Imagesift tool that scrapes images. This may be used for the company\'s generative AI product.", "link": "https://imagesift.com/about"},
 						{"name": "Kangaroo Bot", "description": "Used to power the Australia-focused Kangaroo LLM.", "link": "https://kangaroollm.com.au/kangaroo-bot/"},
 						{"name": "Meta-ExternalAgent / Meta-ExternalFetcher", "description": "Used by Meta (Facebook) to train AI products.", "link": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"},
@@ -56,6 +56,7 @@
 						{"name": "Panscient", "description": "Compiles data on businesses and business professionals that is structured using AI and machine learning.", "link": "https://panscient.com"},
 						{"name": "PerplexityBot", "description": "Used by Perplexity for their AI products.", "link": "https://docs.perplexity.ai/docs/perplexitybot"},
 						{"name": "Perplexity‑User", "description": "Used by Perplexity for their AI products.", "link": "https://perplexity.ai/perplexity-user"},
+						{"name": "PhindBot", "description": "An AI agent that leverages generative AI to interpret intent and synthesize responses.", "link": "https://www.phind.com/"},
 						{"name": "Poseidon Research Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://www.poseidonresearch.com/"},
 						{"name": "SBIntuitionsBot", "description": "Gathers data for AI development and information analysis", "link": "https://www.sbintuitions.co.jp/en/bot/"},
 						{"name": "Scrapy", "description": "Blocks the Scrapy bot (used for scraping websites).", "link": "https://scrapy.org/"},
@@ -63,11 +64,10 @@
 						{"name": "ThinkBot", "description": "Used by ThinkBot for AI analysis and analytics.", "link": "https://thinkbot.agency/"},
 						{"name": "TikTokSpider", "description": "Used by Bytedance (TikTok\'s parent company).", "link": ""},
 						{"name": "Timpibot", "description": "Used by Timpi; likely for their Wilson AI Product.", "link": "https://timpi.io/wilson-ai/"},
-						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
+						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection.", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
 						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
 						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
 						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"},
-
 						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
 					]';
 
