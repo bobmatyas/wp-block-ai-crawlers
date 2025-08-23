@@ -68,6 +68,7 @@
 						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
 						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
 						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"},
+						{"name": "YandexAdditional", "description": "Used by Yandex.com for AI products.", "link": "https://yandex.com/"},
 						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
 					]';
 

@@ -82,6 +82,8 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";
 		$robots .= "User-agent: Yak\n";
+		$robots .= "User-agent: YandexAdditional\n";
+		$robots .= "User-agent: YandexAdditionalBot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";
 		$robots .= "User-agent: webzio-extended\n";
