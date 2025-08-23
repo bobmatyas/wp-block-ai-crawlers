@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.1
+ * Version:         1.5.2
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -28,12 +28,15 @@ require __DIR__ . '/inc/settings.php';
  */
 function block_ai_robots_txt( $robots ) {
 		$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
+		$robots .= "User-agent: AddSearchBot\n";
 		$robots .= "User-agent: AI2Bot\n";
 		$robots .= "User-agent: Ai2Bot-Dolma\n";
 		$robots .= "User-agent: aiHitBot\n";
 		$robots .= "User-agent: AmazonBot\n";
 		$robots .= "User-agent: Applebot-Extended\n";
 		$robots .= "User-agent: anthropic-ai\n";
+		$robots .= "User-agent: bedrockbot\n";
+		$robots .= "User-agent: bigsur.ai\n";
 		$robots .= "User-agent: Bytespider\n";
 		$robots .= "User-agent: CCBot\n";
 		$robots .= "User-agent: ChatGPT-User\n";
@@ -45,11 +48,14 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Cotoyogi\n";
 		$robots .= "User-agent: Crawlspace\n";
 		$robots .= "User-agent: Diffbot\n";
+		$robots .= "User-agent: EchoboxBot\n";
 		$robots .= "User-agent: FacebookBot\n";
 		$robots .= "User-agent: Factset_spyderbot\n";
 		$robots .= "User-agent: FirecrawlAgent\n";
 		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
+		$robots .= "User-agent: GoogleAgent-Mariner\n";
+		$robots .= "User-agent: Gemini-Deep-Research\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
 		$robots .= "User-agent: Kangaroo Bot\n";
@@ -59,17 +65,25 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Omgili\n";
 		$robots .= "User-agent: Omgilibot\n";
 		$robots .= "User-agent: PanguBot\n";
+		$robots .= "User-agent: Panscient\n";
+		$robots .= "User-agent: Panscient.com\n";
 		$robots .= "User-agent: PetalBot\n";
 		$robots .= "User-agent: PerplexityBot\n";
 		$robots .= "User-agent: Perplexity‑User\n";
+		$robots .= "User-agent: Poseidon Research Crawler\n";
+		$robots .= "User-agent: SBIntuitionsBot\n";
 		$robots .= "User-agent: Scrapy\n";
 		$robots .= "User-agent: SemrushBot\n";
 		$robots .= "User-agent: SemrushBot-OCOB\n";
 		$robots .= "User-agent: SemrushBot-FT\n";
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
+		$robots .= "User-agent: Thinkbot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";
+		$robots .= "User-agent: Yak\n";
+		$robots .= "User-agent: YandexAdditional\n";
+		$robots .= "User-agent: YandexAdditionalBot\n";
 		$robots .= "User-agent: YouBot\n";
 		$robots .= "User-agent: webzio\n";
 		$robots .= "User-agent: webzio-extended\n";
