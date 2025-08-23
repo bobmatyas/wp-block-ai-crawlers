@@ -101,3 +101,10 @@
 .crawler-table th { 
 	text-align: left; 
 }
+.crawler-table .crawler-description {
+	width: 40%;
+}
+.crawler-table .crawler-link {
+	text-align: right;
+	width: 20%;
+}
