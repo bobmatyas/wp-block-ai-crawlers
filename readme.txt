@@ -100,6 +100,18 @@ No. Search engines follow different `robots.txt` rules.
 == Changelog ==
 
 = 1.5.2 =
+- New: Block Yak
+- New: Block Bigsur.ai
+- New: Block AddSearchBot
+- New: Block Google Agents
+- New: Block Thinkbot
+- New: Block Posideon Research Center
+- New: Block EchoboxBot
+- New: Block Bedrockbot
+- New: Block Panscient
+- New: Block SBIntuitionsBot
+- New: Block PhindBot
+- New: Block YandexAdditional
 
 = 1.5.1 =
 - New: Block aiHitBot
