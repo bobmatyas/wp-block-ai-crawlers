@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.3
+ * Version:         1.5.4
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -37,6 +37,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: anthropic-ai\n";
 		$robots .= "User-agent: bedrockbot\n";
 		$robots .= "User-agent: bigsur.ai\n";
+		$robots .= "User-agent: Brightbot 1.0\n";
 		$robots .= "User-agent: Bytespider\n";
 		$robots .= "User-agent: CCBot\n";
 		$robots .= "User-agent: ChatGPT-User\n";
@@ -47,6 +48,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: cohere-training-data-crawler\n";
 		$robots .= "User-agent: Cotoyogi\n";
 		$robots .= "User-agent: Crawlspace\n";
+		$robots .= "User-agent: DeepSeekBot\n";
 		$robots .= "User-agent: Diffbot\n";
 		$robots .= "User-agent: EchoboxBot\n";
 		$robots .= "User-agent: FacebookBot\n";
@@ -78,6 +80,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: SemrushBot-FT\n";
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
+		$robots .= "User-agent: TerraCotta\n";
 		$robots .= "User-agent: Thinkbot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";
@@ -121,9 +124,12 @@ function block_ai_meta_tag() {
  * Plugin activation
  */
 function block_ai_activate() {
-	if ( file_exists( "{$_SERVER['DOCUMENT_ROOT']}/robots.txt" ) ) {
+	// Sanitize and validate DOCUMENT_ROOT before use.
+	$document_root = isset( $_SERVER['DOCUMENT_ROOT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['DOCUMENT_ROOT'] ) ) : '';
+	
+	if ( ! empty( $document_root ) && file_exists( $document_root . '/robots.txt' ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-		wp_die( '<h1>Could Not Activate Plugin</h1><p>Your site uses a physical <code>robots.txt</code> file. This plugin can only be activated when using the built-in virtual <code>robots.txt</code> provided by WordPress.</p> <h2>To Activate</h2><p>Move the <code>robots.txt</code> file outside of your root directory or rename it to something like <code>robots.txt.bak</code>. This file is located at:<br><br><b>' . esc_html( "{$_SERVER['DOCUMENT_ROOT']}/robots.txt" ) . '</b></p> <p>Once that is done, please try reactivating the plugin.</p>', '', array( 'back_link' => true ) );
+		wp_die( '<h1>Could Not Activate Plugin</h1><p>Your site uses a physical <code>robots.txt</code> file. This plugin can only be activated when using the built-in virtual <code>robots.txt</code> provided by WordPress.</p> <h2>To Activate</h2><p>Move the <code>robots.txt</code> file outside of your root directory or rename it to something like <code>robots.txt.bak</code>. This file is located at:<br><br><b>' . esc_html( $document_root . '/robots.txt' ) . '</b></p> <p>Once that is done, please try reactivating the plugin.</p>', '', array( 'back_link' => true ) );
 	}
 }
 
@@ -169,8 +175,8 @@ function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 		$stars_color = '#ffb900';
 
 		echo '<style>'
-		. '.rate-stars{display:inline-block;color:' . $stars_color . ';position:relative;top:3px;}'
-		. '.rate-stars svg {fill:' . $stars_color . ';}'
+		. '.rate-stars{display:inline-block;color:' . esc_attr( $stars_color ) . ';position:relative;top:3px;}'
+		. '.rate-stars svg {fill:' . esc_attr( $stars_color ) . ';}'
 		. '</style>';
 	}
 
@@ -186,7 +192,7 @@ add_action( 'admin_init', 'block_ai_crawlers_settings' );
  * Registers settings and sections for the Block AI Crawlers plugin.
  */
 function block_ai_crawlers_settings() {
-	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt' );
+	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt', array( 'sanitize_callback' => 'block_ai_crawlers_sanitize_robots_txt' ) );
 
 	add_settings_section(
 		'block_ai_crawlers_robots_section',
@@ -204,6 +210,16 @@ function block_ai_crawlers_settings() {
 	);
 }
 
+
+/**
+ * Sanitizes the custom robots.txt content.
+ *
+ * @param string $value The unsanitized robots.txt content.
+ * @return string The sanitized robots.txt content.
+ */
+function block_ai_crawlers_sanitize_robots_txt( $value ) {
+	return sanitize_textarea_field( $value );
+}
 
 /**
  * Callback function for the custom robots.txt entries section.
