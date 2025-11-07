@@ -99,6 +99,14 @@ No. Search engines follow different `robots.txt` rules.
 
 == Changelog ==
 
+= 1.5.4 =
+- Bump version number
+- New: Block Brightbot
+- New: Block DeepSeekBot
+- New: Block TerraCotta
+- Fix: Plugin check errors
+
+
 = 1.5.2 =
 - New: Block Yak
 - New: Block Bigsur.ai
