@@ -214,11 +214,22 @@ function block_ai_crawlers_settings() {
 /**
  * Sanitizes the custom robots.txt content.
  *
- * @param string $value The unsanitized robots.txt content.
+ * @param string|array $value The unsanitized robots.txt content.
  * @return string The sanitized robots.txt content.
  */
 function block_ai_crawlers_sanitize_robots_txt( $value ) {
-	return sanitize_textarea_field( $value );
+	// Ensure we have a string value.
+	if ( is_array( $value ) ) {
+		$value = isset( $value[0] ) ? $value[0] : '';
+	}
+
+	// Unslash the value (WordPress adds slashes to POST data).
+	$value = wp_unslash( $value );
+
+	// Sanitize the textarea content while preserving robots.txt format.
+	$sanitized = sanitize_textarea_field( $value );
+
+	return $sanitized;
 }
 
 /**
