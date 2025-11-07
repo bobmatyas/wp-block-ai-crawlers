@@ -31,6 +31,7 @@
 						{"name": "AppleBot", "description": "Used by Apple for generative AI features across Apple products, including Apple Intelligence, Services, and Developer Tools.", "link": "https://support.apple.com/en-us/119829"},
 						{"name": "bedrockbot", "description": "Connects to and crawls URLs that have been selected for use in a user\'s AWS bedrock application.", "link": "https://docs.aws.amazon.com/bedrock/latest/userguide/webcrawl-data-source-connector.html#configuration-webcrawl-connector"},
 						{"name": "BigSur.ai", "description": "Used by BigSur.ai to power their AI Web Agent.", "link": "https://bigsur.ai/"},
+						{"name": "Brightbot", "description": "Scrapes data to train LLMs and AI products.", "link": "https://brightdata.com/brightbot"},
 						{"name": "Bytespider", "description": "Used by TikTok for AI training.", "link": "https://darkvisitors.com/agents/bytespider"},
 						{"name": "ChatGPT", "description": "Used by OpenAI to power ChatGPT.", "link": "https://platform.openai.com/docs/plugins/bot"},
 						{"name": "ClaudeBot and Claude-Web", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
