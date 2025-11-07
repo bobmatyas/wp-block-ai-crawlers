@@ -39,6 +39,7 @@
 						{"name": "CommonCrawl", "description": "Compiles datasets used to train AI models.", "link": "https://commoncrawl.org/big-picture/frequently-asked-questions/"},
 						{"name": "Cotoyogi", "description": "A Japan-based crawler used to train AI models.", "link": "https://ds.rois.ac.jp/en_center8/en_crawler/"},
 						{"name": "Crawlspace", "description": "A web scraper that can be used to extract data for AI training.", "link": "https://crawlspace.dev/"},
+						{"name": "DeepSeekBot", "description": "Used by DeepSeek to scrape data for AI training.", "link": "https://www.deepseek.com/en"},
 						{"name": "Diffbot", "description": "Used by Diffbot to scrape data for AI training.", "link": "https://docs.diffbot.com/reference/crawl-introduction"},
 						{"name": "EchoboxBot", "description": "Supports company\'s AI-powered social and email management products.", "link": "https://echobox.com"},
 						{"name": "FacebookBot", "description": "Used by Meta (Facebook) for their AI.", "link": "https://developers.facebook.com/docs/sharing/bot"},
