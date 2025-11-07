@@ -80,6 +80,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: SemrushBot-FT\n";
 		$robots .= "User-agent: SentiBot\n";
 		$robots .= "User-agent: sentibot\n";
+		$robots .= "User-agent: TerraCotta\n";
 		$robots .= "User-agent: Thinkbot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";

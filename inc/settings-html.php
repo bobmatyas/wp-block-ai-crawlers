@@ -63,6 +63,7 @@
 						{"name": "SBIntuitionsBot", "description": "Gathers data for AI development and information analysis", "link": "https://www.sbintuitions.co.jp/en/bot/"},
 						{"name": "Scrapy", "description": "Blocks the Scrapy bot (used for scraping websites).", "link": "https://scrapy.org/"},
 						{"name": "SemrushBot", "description": "Blocks the Semrush bot used to pull data into the Semrush platform. Data is used for their ContentShake AI tool.", "link": "https://www.semrush.com/bot/"},
+						{"name": "TerraCotta", "description": "Used by Ceramic.ai to scrape data for AI training.", "link": "https://github.com/CeramicTeam/CeramicTerracotta"},
 						{"name": "ThinkBot", "description": "Used by ThinkBot for AI analysis and analytics.", "link": "https://thinkbot.agency/"},
 						{"name": "TikTokSpider", "description": "Used by Bytedance (TikTok\'s parent company).", "link": ""},
 						{"name": "Timpibot", "description": "Used by Timpi; likely for their Wilson AI Product.", "link": "https://timpi.io/wilson-ai/"},
