@@ -22,7 +22,7 @@
 					<summary><h3>Blocked Crawlers</h3></summary>
 
 					<?php
-					$crawlers = '[
+					$block_ai_crawlers = '[
 						{"name": "Addsearchbot", "description": "Web crawler that indexes website content for AddSearch\'s AI-powered site search solution.", "link": "https://www.addsearch.com/docs/indexing/whitelisting-addsearch-bot/"},
 						{"name": "AI2Bot", "description": "Explores sites for web content that is used to train open language models.", "link": "https://allenai.org/crawler"},
 						{"name": "Ai2Bot-Dolma", "description": "Generates data sets used to train open language models", "link": "https://allenai.org/dolma"},
@@ -75,16 +75,16 @@
 						{"name": "YouBot", "description": "Used by You.com to train AI products.", "link": "https://about.you.com/es/youbot/"}
 					]';
 
-					$crawlers_array = json_decode( $crawlers, true );
+					$block_ai_crawlers_array = json_decode( $block_ai_crawlers, true );
 					?>
 
 					<table class="crawler-table">
 						<tbody>
-							<?php foreach ( $crawlers_array as $crawler ) : ?>
+							<?php foreach ( $block_ai_crawlers_array as $block_ai_crawler ) : ?>
 								<tr>
-									<th class="form-table-header"><?php echo esc_html( $crawler['name'] ); ?></th>
-									<td class="crawler-description"><p><?php echo esc_html( $crawler['description'] ); ?></p></td>
-									<td class="crawler-link"><a href="<?php echo esc_url( $crawler['link'] ); ?>" target="_blank" title="More Info"> Info <span class="dashicons dashicons-external link"></span></a></td>
+									<th class="form-table-header"><?php echo esc_html( $block_ai_crawler['name'] ); ?></th>
+									<td class="crawler-description"><p><?php echo esc_html( $block_ai_crawler['description'] ); ?></p></td>
+									<td class="crawler-link"><a href="<?php echo esc_url( $block_ai_crawler['link'] ); ?>" target="_blank" title="More Info"> Info <span class="dashicons dashicons-external link"></span></a></td>
 								</tr>
 							<?php endforeach; ?>
 						</tbody>
