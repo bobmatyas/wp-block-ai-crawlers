@@ -4,6 +4,10 @@
  * @package "Block_AI_Crawlers"
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 <div class="block-ai-container">
 	<div class="wrap">
@@ -34,7 +38,9 @@
 						{"name": "Brightbot", "description": "Scrapes data to train LLMs and AI products.", "link": "https://brightdata.com/brightbot"},
 						{"name": "Bytespider", "description": "Used by TikTok for AI training.", "link": "https://darkvisitors.com/agents/bytespider"},
 						{"name": "ChatGPT", "description": "Used by OpenAI to power ChatGPT.", "link": "https://platform.openai.com/docs/plugins/bot"},
-						{"name": "ClaudeBot and Claude-Web", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+						{"name": "ClaudeBot", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+						{"name": "Claude-SearchBot", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+						{"name": "Claude-User", "description": "Used by Anthropic\'s Claude.", "link": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
 						{"name": "Cohere and cohere-training-data-crawler", "description": "Used by Cohere to scrape data for AI training.", "link": "https://cohere.com/about"},
 						{"name": "CommonCrawl", "description": "Compiles datasets used to train AI models.", "link": "https://commoncrawl.org/big-picture/frequently-asked-questions/"},
 						{"name": "Cotoyogi", "description": "A Japan-based crawler used to train AI models.", "link": "https://ds.rois.ac.jp/en_center8/en_crawler/"},
@@ -47,11 +53,14 @@
 						{"name": "FirecrawlAgent", "description": "Used by Firecrawl to scrape data for AI training.", "link": "https://www.firecrawl.dev/"},
 						{"name": "Friendly Crawler", "description": "Crawls websites to build datasets for machine learning experiments.", "link": "https://imho.alex-kunz.com/2024/01/25/an-update-on-friendly-crawler/"},
 						{"name": "Gemini-Deep-Research", "description": "Used by Google to power Gemini Deep Research.", "link": "https://gemini.google/overview/deep-research/?hl=en"},
+						{"name": "Google-CloudVertexBot", "description": "Used by Google to power Google Cloud Vertex AI.", "link": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"},
 						{"name": "Google Extended", "description": "Used by Google to power Gemini (formerly known as Bard).", "link": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=en#common-crawlers"},
 						{"name": "GoogleAgent-Mariner", "description": "An AI agent created by Google that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a human user.", "link": "https://deepmind.google/models/project-mariner/"},
 						{"name": "ImagesiftBot", "description": "Used by Hive\'s Imagesift tool that scrapes images. This may be used for the company\'s generative AI product.", "link": "https://imagesift.com/about"},
 						{"name": "Kangaroo Bot", "description": "Used to power the Australia-focused Kangaroo LLM.", "link": "https://kangaroollm.com.au/kangaroo-bot/"},
+						{"name": "LinerBot", "description": "Used by Liner to scrape data for AI training.", "link": "https://docs.getliner.com/docs/linerbot"},
 						{"name": "Meta-ExternalAgent / Meta-ExternalFetcher", "description": "Used by Meta (Facebook) to train AI products.", "link": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers"},
+						{"name": "MistralAI-User", "description": "Used by Mistral AI.", "link": "https://docs.mistral.ai/robots"},
 						{"name": "OAI-SearchBot", "description": "Used by OpenAI for their SearchGPT product.", "link": "https://platform.openai.com/docs/bots"},
 						{"name": "Omgilibot", "description": "Used by Omigili to scrape data for AI training.", "link": "https://webz.io/blog/machine-learning/common-crawl-vs-webz-io-data-which-one-works-best-for-large-language-models/"},
 						{"name": "PanguBot", "description": "Used by Huawei to download data for the Large Language Model (LLM) called PanGu.", "link": "https://darkvisitors.com/agents/pangubot"},
@@ -68,6 +77,7 @@
 						{"name": "TikTokSpider", "description": "Used by Bytedance (TikTok\'s parent company).", "link": ""},
 						{"name": "Timpibot", "description": "Used by Timpi; likely for their Wilson AI Product.", "link": "https://timpi.io/wilson-ai/"},
 						{"name": "TurnitinBot", "description": "Used by Turnitin to scrape data for plagiarism detection.", "link": "https://www.turnitin.com/robot/crawlerinfo.html"},
+						{"name": "VelenPublicWebCrawler", "description": "Used by Velen / Hunter", "link": "https://velen.io/"},
 						{"name": "Webzio", "description": "Used by Webz.io for their social listening and intelligence platforms.", "link": "https://webz.io/bot.html"},
 						{"name": "Webzio-Extended", "description": "Used by Webz.io for AI training.", "link": "https://webz.io/bot.html"},
 						{"name": "YaK", "description": "Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite.", "link": "https://www.meltwater.com/en/suite/consumer-intelligence"},
@@ -76,6 +86,7 @@
 					]';
 
 					$block_ai_crawlers_array = json_decode( $block_ai_crawlers, true );
+					$block_ai_crawlers_array = is_array( $block_ai_crawlers_array ) ? $block_ai_crawlers_array : array();
 					?>
 
 					<table class="crawler-table">

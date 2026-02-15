@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.5
+ * Version:         1.5.6
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -57,12 +57,15 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: FriendlyCrawler\n";
 		$robots .= "User-agent: GPTBot\n";
 		$robots .= "User-agent: GoogleAgent-Mariner\n";
+		$robots .= "User-agent: Google-CloudVertexBot\n";
 		$robots .= "User-agent: Gemini-Deep-Research\n";
 		$robots .= "User-agent: Google-Extended\n";
 		$robots .= "User-agent: ImagesiftBot\n";
 		$robots .= "User-agent: Kangaroo Bot\n";
+		$robots .= "User-agent: LinerBot\n";
 		$robots .= "User-agent: meta-externalagent\n";
 		$robots .= "User-agent: Meta-externalfetcher\n";
+		$robots .= "User-agent: MistralAI-User\n";
 		$robots .= "User-agent: OAI-SearchBot\n";
 		$robots .= "User-agent: Omgili\n";
 		$robots .= "User-agent: Omgilibot\n";
@@ -84,6 +87,7 @@ function block_ai_robots_txt( $robots ) {
 		$robots .= "User-agent: Thinkbot\n";
 		$robots .= "User-agent: Timpibot\n";
 		$robots .= "User-agent: TurnitinBot\n";
+		$robots .= "User-agent: VelenPublicWebCrawler\n";
 		$robots .= "User-agent: Yak\n";
 		$robots .= "User-agent: YandexAdditional\n";
 		$robots .= "User-agent: YandexAdditionalBot\n";

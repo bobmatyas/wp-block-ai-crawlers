@@ -5,6 +5,10 @@
  * @package "Block_AI_Crawlers"
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 add_action( 'admin_menu', 'block_ai_crawlers_add_settings_menu' );
 
 /**
