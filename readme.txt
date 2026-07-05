@@ -1,10 +1,10 @@
 === Block AI Crawlers ===
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
-Requires at least: 6.8
-Tested up to: 6.9
+Requires at least: 6.9
+Tested up to: 7.0
 Requires PHP: 8.2
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,9 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.5.7 - 07/04/2026 =
+- New: Indicate WordPress v7.0 compatibility
 
 = 1.5.6 - 02/15/2026 =
 - Fix: Update Claude blocking
