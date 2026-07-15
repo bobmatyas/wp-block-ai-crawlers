@@ -37,9 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<th class="form-table-header"><?php echo esc_html( $block_ai_crawler_name ); ?></th>
 									<td class="crawler-description"><p><?php echo esc_html( $block_ai_crawler['description'] ); ?></p></td>
 									<td class="crawler-link">
-										<?php if ( ! empty( $block_ai_crawler['link'] ) ) : ?>
-											<a href="<?php echo esc_url( $block_ai_crawler['link'] ); ?>" target="_blank" title="More Info"> Info <span class="dashicons dashicons-external link"></span></a>
-										<?php endif; ?>
+									<a href="<?php echo esc_url( $block_ai_crawler['link'] ); ?>" target="_blank" rel="noopener noreferrer" title="More Info"> Info <span class="dashicons dashicons-external link"></span></a>
 									</td>
 								</tr>
 							<?php endforeach; ?>
