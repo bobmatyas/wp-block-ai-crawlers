@@ -53,6 +53,11 @@ function block_ai_get_crawlers() {
 function block_ai_robots_txt( $robots ) {
 	$crawlers = block_ai_get_crawlers();
 
+	if ( empty( $crawlers ) ) {
+		$robots .= block_ai_robots_txt_custom_rules();
+		return $robots;
+	}
+
 	$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
 
 	foreach ( array_keys( $crawlers ) as $user_agent ) {
