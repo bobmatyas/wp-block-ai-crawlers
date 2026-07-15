@@ -1,0 +1,95 @@
+name: Monitor ai.robots.txt
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-upstream:
+    name: Check robots.json for updates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compare upstream SHA and open issue if needed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          LOCAL_SHA=$(grep -oE 'Upstream-SHA:[[:space:]]*[a-f0-9]+' inc/generated/crawlers.php | head -1 | awk '{print $2}')
+          if [ -z "${LOCAL_SHA}" ]; then
+            echo "Could not read Upstream-SHA from inc/generated/crawlers.php"
+            exit 1
+          fi
+
+          UPSTREAM_SHA=$(curl -fsSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "User-Agent: block-ai-crawlers-monitor" \
+            "https://api.github.com/repos/ai-robots-txt/ai.robots.txt/contents/robots.json" \
+            | jq -r '.sha')
+
+          if [ -z "${UPSTREAM_SHA}" ] || [ "${UPSTREAM_SHA}" = "null" ]; then
+            echo "Could not resolve upstream blob SHA"
+            exit 1
+          fi
+
+          echo "Local Upstream-SHA: ${LOCAL_SHA}"
+          echo "Remote Upstream-SHA: ${UPSTREAM_SHA}"
+
+          if [ "${LOCAL_SHA}" = "${UPSTREAM_SHA}" ]; then
+            echo "Crawler list is up to date."
+            exit 0
+          fi
+
+          echo "Upstream robots.json has changed."
+
+          EXISTING=$(gh issue list \
+            --label "upstream-crawlers" \
+            --state open \
+            --limit 1 \
+            --json number \
+            --jq '.[0].number // empty')
+
+          if [ -n "${EXISTING}" ]; then
+            echo "Open issue #${EXISTING} already tracks upstream crawler updates; skipping."
+            exit 0
+          fi
+
+          # Ensure the label exists (ignore failure if it already does).
+          gh label create "upstream-crawlers" \
+            --description "Upstream ai.robots.txt crawler list has changed" \
+            --color "0E8A16" \
+            || true
+
+          BODY=$(cat <<EOF
+          The upstream [ai.robots.txt \`robots.json\`](https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.json) file has changed.
+
+          | | SHA |
+          |---|---|
+          | Committed plugin list | \`${LOCAL_SHA}\` |
+          | Upstream \`robots.json\` | \`${UPSTREAM_SHA}\` |
+
+          ## Update steps
+
+          1. Run \`php bin/import-robots.php\`
+          2. Review the diff in \`inc/generated/crawlers.php\`
+          3. Commit the regenerated file and ship a plugin release
+          EOF
+          )
+
+          # Strip leading tabs from the heredoc for cleaner issue body.
+          BODY=$(printf '%s\n' "$BODY" | sed 's/^[[:space:]]*//')
+
+          gh issue create \
+            --title "Update crawler list from ai.robots.txt" \
+            --label "upstream-crawlers" \
+            --body "$BODY"
+
+          echo "Opened issue for upstream crawler update."

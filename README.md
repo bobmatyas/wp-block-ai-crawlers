@@ -10,11 +10,15 @@ Includes:
 
   - **OpenAI** - Blocks crawlers used for ChatGPT
   - **Google** - Blocks crawlers used by Google's Gemini AI products
-  - **Facebook / Meta** - Used for Facebook's AI training
-  - **Anthropic AI** - Blocks crawlers used by Anthropic  
-  - **Perplexity** - Block crawlers used by Perplexity
-  - **Applebot** - Blocks crawlers used by Apple
-  - ... and more!
+  - **Meta** - Blocks FacebookBot and Meta training crawlers
+  - **Anthropic** - Blocks crawlers used by Claude
+  - **Perplexity** - Blocks crawlers used by Perplexity
+  - **Apple** - Blocks Applebot-Extended
+  - **Amazon** - Blocks Amazonbot
+  - ...and 150+ more via ai.robots.txt
+
+The blocked crawler list is generated at build time from
+[ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) (`robots.json`, MIT).
 
 ### Experimental Meta Tags
 
@@ -31,6 +35,18 @@ The plugin adds the "noai, noimageai" directive to your site's meta tags, instru
 ## Usage
 
 After activation, the plugin will automatically update your `robots.txt` and add the necessary meta tags. No further configuration is required, but you can check the settings page for a full list of blocked crawlers.
+
+## Updating the crawler list (developers)
+
+To refresh the committed crawler data from upstream:
+
+```bash
+php bin/import-robots.php
+```
+
+This writes `inc/generated/crawlers.php`. Commit the regenerated file before releasing.
+
+See [THIRD-PARTY.md](THIRD-PARTY.md) for license attribution.
 
 ## Limitations
 

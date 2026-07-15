@@ -21,83 +21,49 @@ add_filter( 'robots_txt', 'block_ai_robots_txt', 1, 2 );
 require __DIR__ . '/inc/settings.php';
 
 /**
+ * Loads the build-generated crawler list.
+ *
+ * @return array<string, array{description: string, link: string}>
+ */
+function block_ai_get_crawlers() {
+	static $crawlers = null;
+
+	if ( null !== $crawlers ) {
+		return $crawlers;
+	}
+
+	$crawlers_file = __DIR__ . '/inc/generated/crawlers.php';
+	if ( ! is_readable( $crawlers_file ) ) {
+		$crawlers = array();
+		return $crawlers;
+	}
+
+	$loaded = require $crawlers_file;
+	$crawlers = is_array( $loaded ) ? $loaded : array();
+
+	return $crawlers;
+}
+
+/**
  * Adds blocking directives to robots.txt
  *
  * @param string $robots inputs default robots.txt.
  * @return string
  */
 function block_ai_robots_txt( $robots ) {
-		$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
-		$robots .= "User-agent: AddSearchBot\n";
-		$robots .= "User-agent: AI2Bot\n";
-		$robots .= "User-agent: Ai2Bot-Dolma\n";
-		$robots .= "User-agent: aiHitBot\n";
-		$robots .= "User-agent: AmazonBot\n";
-		$robots .= "User-agent: Applebot-Extended\n";
-		$robots .= "User-agent: anthropic-ai\n";
-		$robots .= "User-agent: bedrockbot\n";
-		$robots .= "User-agent: bigsur.ai\n";
-		$robots .= "User-agent: Brightbot 1.0\n";
-		$robots .= "User-agent: Bytespider\n";
-		$robots .= "User-agent: CCBot\n";
-		$robots .= "User-agent: ChatGPT-User\n";
-		$robots .= "User-agent: ClaudeBot\n";
-		$robots .= "User-agent: Claude-User\n";
-		$robots .= "User-agent: Claude-SearchBot\n";
-		$robots .= "User-agent: cohere-ai\n";
-		$robots .= "User-agent: cohere-training-data-crawler\n";
-		$robots .= "User-agent: Cotoyogi\n";
-		$robots .= "User-agent: Crawlspace\n";
-		$robots .= "User-agent: DeepSeekBot\n";
-		$robots .= "User-agent: Diffbot\n";
-		$robots .= "User-agent: EchoboxBot\n";
-		$robots .= "User-agent: FacebookBot\n";
-		$robots .= "User-agent: Factset_spyderbot\n";
-		$robots .= "User-agent: FirecrawlAgent\n";
-		$robots .= "User-agent: FriendlyCrawler\n";
-		$robots .= "User-agent: GPTBot\n";
-		$robots .= "User-agent: GoogleAgent-Mariner\n";
-		$robots .= "User-agent: Google-CloudVertexBot\n";
-		$robots .= "User-agent: Gemini-Deep-Research\n";
-		$robots .= "User-agent: Google-Extended\n";
-		$robots .= "User-agent: ImagesiftBot\n";
-		$robots .= "User-agent: Kangaroo Bot\n";
-		$robots .= "User-agent: LinerBot\n";
-		$robots .= "User-agent: meta-externalagent\n";
-		$robots .= "User-agent: Meta-externalfetcher\n";
-		$robots .= "User-agent: MistralAI-User\n";
-		$robots .= "User-agent: OAI-SearchBot\n";
-		$robots .= "User-agent: Omgili\n";
-		$robots .= "User-agent: Omgilibot\n";
-		$robots .= "User-agent: PanguBot\n";
-		$robots .= "User-agent: Panscient\n";
-		$robots .= "User-agent: Panscient.com\n";
-		$robots .= "User-agent: PetalBot\n";
-		$robots .= "User-agent: PerplexityBot\n";
-		$robots .= "User-agent: Perplexity‑User\n";
-		$robots .= "User-agent: Poseidon Research Crawler\n";
-		$robots .= "User-agent: SBIntuitionsBot\n";
-		$robots .= "User-agent: Scrapy\n";
-		$robots .= "User-agent: SemrushBot\n";
-		$robots .= "User-agent: SemrushBot-OCOB\n";
-		$robots .= "User-agent: SemrushBot-FT\n";
-		$robots .= "User-agent: SentiBot\n";
-		$robots .= "User-agent: sentibot\n";
-		$robots .= "User-agent: TerraCotta\n";
-		$robots .= "User-agent: Thinkbot\n";
-		$robots .= "User-agent: Timpibot\n";
-		$robots .= "User-agent: TurnitinBot\n";
-		$robots .= "User-agent: VelenPublicWebCrawler\n";
-		$robots .= "User-agent: Yak\n";
-		$robots .= "User-agent: YandexAdditional\n";
-		$robots .= "User-agent: YandexAdditionalBot\n";
-		$robots .= "User-agent: YouBot\n";
-		$robots .= "User-agent: webzio\n";
-		$robots .= "User-agent: webzio-extended\n";
-		$robots .= "Disallow: /\n\n";
-		$robots .= "# End Block AI Crawlers - Built-In Rules\n";
-		$robots .= block_ai_robots_txt_custom_rules();
-		return ( $robots );
+	$crawlers = block_ai_get_crawlers();
+
+	$robots .= "\n# Block AI Crawlers - Built-In Rules\n\n";
+
+	foreach ( array_keys( $crawlers ) as $user_agent ) {
+		$robots .= 'User-agent: ' . $user_agent . "\n";
+	}
+
+	$robots .= "Disallow: /\n\n";
+	$robots .= "# End Block AI Crawlers - Built-In Rules\n";
+	$robots .= block_ai_robots_txt_custom_rules();
+
+	return $robots;
 }
 
 /**
