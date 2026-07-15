@@ -48,9 +48,10 @@ function block_ai_get_crawlers() {
  * Adds blocking directives to robots.txt
  *
  * @param string $robots inputs default robots.txt.
+ * @param bool   $public Whether the site is public.
  * @return string
  */
-function block_ai_robots_txt( $robots ) {
+function block_ai_robots_txt( $robots, $public ) {
 	$crawlers = block_ai_get_crawlers();
 
 	if ( empty( $crawlers ) ) {
