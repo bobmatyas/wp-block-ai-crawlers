@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="block-ai-info">
 			<p>AI Bots and Crawlers are being automatically blocked via code inserted into your site's <code>robots.txt</code> file. This is a standard way to communicate preferences to web crawlers.</p>
-			<p>The blocked crawler list is generated from the <a href="https://github.com/ai-robots-txt/ai.robots.txt" target="_blank">ai.robots.txt</a> project. When that upstream list changes, the plugin will be rebuilt and released.</p>
+			<p>The blocked crawler list is generated from the <a href="https://github.com/ai-robots-txt/ai.robots.txt" target="_blank" rel="noopener noreferrer">ai.robots.txt</a> project. When that upstream list changes, the plugin will be rebuilt and released.</p>
 			<p><i>Note:</i> It is up to the AI companies to obey these directions. Unfortunately, there is no guarantee that they will.</p>
 
 			<section>
