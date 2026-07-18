@@ -4,7 +4,7 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 6.9
 Tested up to: 7.0
 Requires PHP: 8.2
-Stable tag: 1.5.7
+Stable tag: 1.5.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,11 +24,14 @@ Includes:
 
   - **OpenAI** - Blocks crawlers used for ChatGPT
   - **Google** - Blocks crawlers used by Google's Gemini AI products
-  - **Facebook / Meta** - Used for Facebook's AI training
-  - **Anthropic AI** - Blocks crawlers used by Anthropic  
-  - **Perplexity** - Block crawlers used by Perplexity
-  - **Applebot** - Blocks crawlers used by Apple
-  - ... and more!
+  - **Meta** - Blocks FacebookBot and Meta training crawlers
+  - **Anthropic** - Blocks crawlers used by Claude
+  - **Perplexity** - Blocks crawlers used by Perplexity
+  - **Apple** - Blocks Applebot-Extended
+  - **Amazon** - Blocks Amazonbot
+  - ...and 150+ more via ai.robots.txt
+
+The blocked crawler list is generated at build time from [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) (`robots.json`, MIT). See the plugin's `THIRD-PARTY.md` for license attribution.
 
 ### Experimental Meta Tags
 
@@ -56,7 +59,7 @@ While this plugin aims to block specified crawlers, it cannot guarantee complete
 
 ## Support
 
-For questions or support, [please post on the forums](https://wordpress.org/support/plugin/block-ai-crawlers/) or [on GitHub](https://github.com/bobmatyas/wp-block-ai-crawlers/issues).
+For questions or support, [please post on the forums](https://wordpress.org/support/plugin/block-ai-crawlers/).
 
 == Installation ==
 
@@ -76,11 +79,7 @@ The plugin adds directives to the `robots.txt` file to tell AI crawlers that the
 
 = How often is this updated? =
 
-I try to keep up with new crawlers and update the block list regularly.
-
-= Can I suggest crawlers for blocking? =
-
-Yes! please share suggestions on [the forums](https://wordpress.org/support/plugin/block-ai-crawlers/) or [on GitHub](https://github.com/bobmatyas/wp-block-ai-crawlers/issues).
+The block list is generated from the [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) project. When that upstream list changes, a GitHub Action opens an issue so the plugin can be rebuilt and released.
 
 = What if I already have a `robots.txt` file on my web server? =
 
@@ -98,6 +97,11 @@ No. Search engines follow different `robots.txt` rules.
 
 
 == Changelog ==
+
+= 1.5.8 - 07/15/2026 =
+- Enhancement: Generate blocked crawler list from ai.robots.txt robots.json at build time
+- Enhancement: Sync admin settings crawler table with the same generated list
+- New: Monitor upstream robots.json and open a GitHub issue when it changes
 
 = 1.5.7 - 07/04/2026 =
 - New: Indicate WordPress v7.0 compatibility
