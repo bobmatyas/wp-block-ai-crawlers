@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $block_ai_crawlers_array    = function_exists( 'block_ai_get_crawlers' ) ? block_ai_get_crawlers() : array();
 $block_ai_crawlers_disabled = function_exists( 'block_ai_get_disabled_crawlers' ) ? block_ai_get_disabled_crawlers() : array();
+$block_ai_meta_tag_enabled  = function_exists( 'block_ai_meta_tag_enabled' ) ? block_ai_meta_tag_enabled() : true;
 
 ?>
 <div class="block-ai-container">
@@ -84,7 +85,20 @@ $block_ai_crawlers_disabled = function_exists( 'block_ai_get_disabled_crawlers' 
 				<section>
 					<details>
 						<summary><h3>Experimental Meta Tags</h3></summary>
-						<p>The <code>"noai, noimageai"</code> directive has been added to your site's meta tags. Meta Tags are standardized, but this directive is experimental.</p>
+						<p>Optionally add the experimental <code>"noai, noimageai"</code> directive to your site's meta tags. This is an experimental directive proposed by DeviantArt that is not standardized. <a href="https://datalicenses.org/initiatives/deviantart-noai/" target="_blank" rel="noopener noreferrer">Read more about it. <span class="dashicons dashicons-external link"></span></a></p>
+						<p>
+							<label for="block_ai_crawlers_meta_tag">
+								<input type="hidden" name="block_ai_crawlers_meta_tag" value="0" />
+								<input
+									type="checkbox"
+									id="block_ai_crawlers_meta_tag"
+									name="block_ai_crawlers_meta_tag"
+									value="1"
+									<?php checked( $block_ai_meta_tag_enabled ); ?>
+								/>
+								Add <code>noai, noimageai</code> meta tag
+							</label>
+						</p>
 					</details>
 				</section>
 

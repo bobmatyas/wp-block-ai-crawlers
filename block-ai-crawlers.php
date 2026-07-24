@@ -121,9 +121,22 @@ function block_ai_robots_txt_custom_rules() {
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
 /**
+ * Whether the experimental noai meta tag should be output.
+ *
+ * @return bool
+ */
+function block_ai_meta_tag_enabled() {
+	return '1' === (string) get_option( 'block_ai_crawlers_meta_tag', '1' );
+}
+
+/**
  * Adds no AI meta tag
  */
 function block_ai_meta_tag() {
+	if ( ! block_ai_meta_tag_enabled() ) {
+		return;
+	}
+
 	echo '<meta name="robots" content="noai, noimageai" />';
 }
 
@@ -211,6 +224,16 @@ function block_ai_crawlers_settings() {
 
 	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt', array( 'sanitize_callback' => 'block_ai_crawlers_sanitize_robots_txt' ) );
 
+	register_setting(
+		'block_ai_crawlers_options',
+		'block_ai_crawlers_meta_tag',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'block_ai_crawlers_sanitize_meta_tag',
+			'default'           => '1',
+		)
+	);
+
 	add_settings_section(
 		'block_ai_crawlers_robots_section',
 		'',
@@ -258,6 +281,16 @@ function block_ai_crawlers_sanitize_disabled( $value ) { // phpcs:ignore Generic
 	$disabled = array_values( array_diff( $known, $blocked ) );
 
 	return $disabled;
+}
+
+/**
+ * Sanitizes the meta tag enabled setting.
+ *
+ * @param mixed $value Submitted option value.
+ * @return string '1' or '0'
+ */
+function block_ai_crawlers_sanitize_meta_tag( $value ) {
+	return ( '1' === (string) $value ) ? '1' : '0';
 }
 
 
