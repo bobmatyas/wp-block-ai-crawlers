@@ -45,6 +45,30 @@ function block_ai_get_crawlers() {
 }
 
 /**
+ * Returns crawler user-agents the site owner has opted out of blocking.
+ *
+ * @return string[]
+ */
+function block_ai_get_disabled_crawlers() {
+	static $disabled = null;
+
+	if ( null !== $disabled ) {
+		return $disabled;
+	}
+
+	$stored = get_option( 'block_ai_crawlers_disabled', array() );
+	if ( ! is_array( $stored ) ) {
+		$disabled = array();
+		return $disabled;
+	}
+
+	$known    = array_keys( block_ai_get_crawlers() );
+	$disabled = array_values( array_intersect( $stored, $known ) );
+
+	return $disabled;
+}
+
+/**
  * Adds blocking directives to robots.txt
  *
  * @param string $robots inputs default robots.txt.
@@ -53,6 +77,11 @@ function block_ai_get_crawlers() {
  */
 function block_ai_robots_txt( $robots, $public ) {
 	$crawlers = block_ai_get_crawlers();
+	$disabled = block_ai_get_disabled_crawlers();
+
+	if ( ! empty( $disabled ) ) {
+		$crawlers = array_diff_key( $crawlers, array_fill_keys( $disabled, true ) );
+	}
 
 	if ( empty( $crawlers ) ) {
 		$robots .= block_ai_robots_txt_custom_rules();
@@ -85,6 +114,8 @@ function block_ai_robots_txt_custom_rules() {
 	if ( ! empty( $custom_robots_txt ) ) {
 		return "\n# Start Block AI Crawlers - Custom Rules\n" . $custom_robots_txt . "\n# End Block AI Crawlers - Custom Rules\n";
 	}
+
+	return '';
 }
 
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
@@ -168,6 +199,16 @@ add_action( 'admin_init', 'block_ai_crawlers_settings' );
  * Registers settings and sections for the Block AI Crawlers plugin.
  */
 function block_ai_crawlers_settings() {
+	register_setting(
+		'block_ai_crawlers_options',
+		'block_ai_crawlers_disabled',
+		array(
+			'type'              => 'array',
+			'sanitize_callback' => 'block_ai_crawlers_sanitize_disabled',
+			'default'           => array(),
+		)
+	);
+
 	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt', array( 'sanitize_callback' => 'block_ai_crawlers_sanitize_robots_txt' ) );
 
 	add_settings_section(
@@ -184,6 +225,39 @@ function block_ai_crawlers_settings() {
 		'block-ai-crawlers-robots',
 		'block_ai_crawlers_robots_section'
 	);
+}
+
+/**
+ * Sanitizes the list of crawlers opted out of blocking.
+ *
+ * Expects checked "Block" boxes posted as block_ai_crawlers_blocked[ Name ] = 1.
+ * Stores the inverse: known crawlers that were left unchecked.
+ *
+ * @param mixed $value Unused placeholder from the Settings API hidden field.
+ * @return string[]
+ */
+function block_ai_crawlers_sanitize_disabled( $value ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+	$known = array_keys( block_ai_get_crawlers() );
+
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- options.php verifies the Settings API nonce.
+	$blocked_input = isset( $_POST['block_ai_crawlers_blocked'] ) ? wp_unslash( $_POST['block_ai_crawlers_blocked'] ) : array();
+
+	if ( ! is_array( $blocked_input ) ) {
+		$blocked_input = array();
+	}
+
+	$blocked = array();
+	foreach ( array_keys( $blocked_input ) as $name ) {
+		$name = sanitize_text_field( $name );
+		if ( '' !== $name ) {
+			$blocked[] = $name;
+		}
+	}
+
+	$blocked  = array_intersect( $blocked, $known );
+	$disabled = array_values( array_diff( $known, $blocked ) );
+
+	return $disabled;
 }
 
 

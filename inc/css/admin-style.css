@@ -41,8 +41,19 @@
 
 .block-ai-container table.crawler-table {
   background-color: #fff;
+  border: none;
+  margin-bottom: 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.block-ai-container .crawler-table-wrap {
+  max-height: min(70vh, 40rem);
+  overflow: auto;
   border: 1px solid #eee;
   margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .block-ai-container table :is(th, td) {
@@ -100,6 +111,20 @@
 
 .crawler-table th { 
 	text-align: left; 
+}
+.crawler-table thead th {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	font-weight: 600;
+	background-color: #fff;
+	border-bottom: 1px solid #c3c4c7;
+	box-shadow: 0 1px 0 #c3c4c7;
+}
+.crawler-table .crawler-toggle {
+	width: 4.5em;
+	text-align: center;
+	vertical-align: middle;
 }
 .crawler-table .crawler-description {
 	width: 40%;
