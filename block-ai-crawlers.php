@@ -207,6 +207,104 @@ add_filter( 'plugin_row_meta', 'block_ai_append_plugin_rating', 10, 4 );
 
 add_action( 'admin_init', 'block_ai_crawlers_settings' );
 
+add_action( 'updated_option', 'block_ai_maybe_flush_page_caches', 10, 1 );
+add_action( 'added_option', 'block_ai_maybe_flush_page_caches', 10, 1 );
+
+/**
+ * Flushes page caches when plugin settings that affect public output change.
+ *
+ * @param string $option Option name that was added or updated.
+ * @return void
+ */
+function block_ai_maybe_flush_page_caches( $option ) {
+	$watched = array(
+		'block_ai_crawlers_disabled',
+		'block_ai_crawlers_meta_tag',
+		'block_ai_crawlers_custom_robots_txt',
+	);
+
+	if ( ! in_array( $option, $watched, true ) ) {
+		return;
+	}
+
+	block_ai_flush_page_caches();
+}
+
+/**
+ * Best-effort flush of common page / CDN caches.
+ *
+ * Settings saves are rare; prefer clearing enough to refresh robots.txt and HTML meta tags.
+ *
+ * @return void
+ */
+function block_ai_flush_page_caches() {
+	static $done = false;
+
+	if ( $done ) {
+		return;
+	}
+	$done = true;
+
+	$robots_url = home_url( '/robots.txt' );
+
+	// WP Rocket — URL then domain (meta tags appear on HTML pages).
+	if ( function_exists( 'rocket_clean_files' ) ) {
+		rocket_clean_files( $robots_url );
+	}
+	if ( function_exists( 'rocket_clean_domain' ) ) {
+		rocket_clean_domain();
+	}
+
+	// LiteSpeed Cache.
+	do_action( 'litespeed_purge_url', $robots_url );
+	do_action( 'litespeed_purge_all' );
+
+	// WP Super Cache.
+	if ( function_exists( 'wp_cache_clear_cache' ) ) {
+		wp_cache_clear_cache();
+	}
+
+	// W3 Total Cache.
+	if ( function_exists( 'w3tc_flush_url' ) ) {
+		w3tc_flush_url( $robots_url );
+	}
+	if ( function_exists( 'w3tc_flush_all' ) ) {
+		w3tc_flush_all();
+	}
+
+	// Cache Enabler.
+	do_action( 'cache_enabler_clear_complete_cache' );
+
+	// Hummingbird.
+	do_action( 'wphb_clear_page_cache' );
+
+	// SiteGround Optimizer.
+	if ( function_exists( 'sg_cachepress_purge_cache' ) ) {
+		sg_cachepress_purge_cache();
+	}
+	if ( function_exists( 'sg_cachepress_purge_url' ) ) {
+		sg_cachepress_purge_url( $robots_url );
+	}
+
+	// Nitropack.
+	if ( function_exists( 'nitropack_sdk_purge' ) ) {
+		nitropack_sdk_purge();
+	}
+
+	// Pantheon.
+	if ( function_exists( 'pantheon_wp_clear_edge_all' ) ) {
+		pantheon_wp_clear_edge_all();
+	}
+
+	/**
+	 * Fires after Block AI Crawlers requests a page-cache flush.
+	 *
+	 * Hosts or custom caching layers can hook here to clear robots.txt / HTML caches.
+	 *
+	 * @param string $robots_url Absolute robots.txt URL.
+	 */
+	do_action( 'block_ai_crawlers_flushed_caches', $robots_url );
+}
 
 /**
  * Registers settings and sections for the Block AI Crawlers plugin.

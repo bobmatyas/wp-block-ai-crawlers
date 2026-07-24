@@ -95,6 +95,15 @@ It should in theory. It just appends the directives to the `robots.txt` file.
 
 No. Search engines follow different `robots.txt` rules.
 
+= My `robots.txt` isn't updated after toggling blocks! =
+
+The `robots.txt` file can be cached via your web server, a plugin, or CDN (for example, Cloudflare). Once the cache period expires, the updated `robots.txt` will be served.
+
+You can test by running the following on the command line:
+
+`curl -sSL 'https://example.com/robots.txt' && echo`
+
+
 == Screenshots ==
 
 
