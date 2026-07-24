@@ -4,23 +4,25 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 6.9
 Tested up to: 7.0
 Requires PHP: 8.2
-Stable tag: 1.5.8
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Tell AI (Artificial Intelligence) companies not to scrape your site for their AI products.
+Adds robots.txt rules blocking AI crawlers and AI bots.
 
 == Description ==
 
 # Protect Your Content from AI Scraping
 
-This plugin helps you prevent AI crawlers from using your content as training data for their products. By updating your site's `robots.txt`, it blocks common AI crawlers and scrapers, aiming to protect your content from being used in the training of Large Language Models (LLMs).
+This plugin tells AI companies not to crawl your site for their products via standard `robots.txt` rules.
 
 ## Features
 
-### Blocks AI Crawlers
+### Blocks AI Bots and Crawlers
 
-Includes:
+The plugin blocks dozens of AI bots via your site's `robots.txt` file. You can toggle the blocks for each individual crawler.
+
+Blocked crawlers include:
 
   - **OpenAI** - Blocks crawlers used for ChatGPT
   - **Google** - Blocks crawlers used by Google's Gemini AI products
@@ -31,11 +33,11 @@ Includes:
   - **Amazon** - Blocks Amazonbot
   - ...and 150+ more via ai.robots.txt
 
-The blocked crawler list is generated at build time from [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) (`robots.json`, MIT). See the plugin's `THIRD-PARTY.md` for license attribution.
+The blocked crawler list is generated at build time from [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) (`robots.json`, MIT). See the plugin's `README.md` for license attribution.
 
 ### Experimental Meta Tags
 
-The plugin adds the "noai, noimageai" directive to your site's meta tags, instructing AI bots not to use your content in their datasets. Please note that these tags are experimental and have not been standardized.
+The plugin adds the experimental "noai, noimageai" directive to your site's meta tags. You can toggle this on and off as needed.
 
 ### Custom robots.txt Rules
 
@@ -65,13 +67,13 @@ For questions or support, [please post on the forums](https://wordpress.org/supp
 
 1. Activate the plugin through the 'Plugins' menu in WordPress
 2. Once installed the plugin is automatically activated. There are no user configured settings
-3. You can view more about what crawlers are being blocked at "Settings > Block AI Crawlers"
+3. You can view more about what crawlers are being blocked at "Settings > Block AI Crawlers". You can also toggle blocking of individual crawlers.
 
 == Frequently Asked Questions ==
 
 = Will this remove my site from existing data sets? =
 
-Unfortunately, no. However, it does tell bots that your site shouldn't be used for future datasets.
+No. It tells bots and crawlers that your site shouldn't be used for future training and new datasets. However, it is up to the AI companies to resepect this.
 
 = How does this work? =
 
@@ -93,10 +95,24 @@ It should in theory. It just appends the directives to the `robots.txt` file.
 
 No. Search engines follow different `robots.txt` rules.
 
+= My `robots.txt` isn't updated after toggling blocks! =
+
+The `robots.txt` file can be cached via your web server, a plugin, or CDN (for example, Cloudflare). Once the cache period expires, the updated `robots.txt` will be served.
+
+You can test by running the following on the command line:
+
+`curl -sSL 'https://example.com/robots.txt' && echo`
+
+
 == Screenshots ==
 
 
 == Changelog ==
+
+= 1.6.0 - 07/24/2026 =
+- New: Per-crawler toggles to opt individual bots out of robots.txt blocking
+- New: Optional toggle for the experimental `noai, noimageai` meta tag
+- Enhancement: Sticky header on the blocked crawlers settings table
 
 = 1.5.8 - 07/15/2026 =
 - Enhancement: Generate blocked crawler list from ai.robots.txt robots.json at build time

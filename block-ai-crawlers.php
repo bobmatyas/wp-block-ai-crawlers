@@ -5,7 +5,7 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.5.8
+ * Version:         1.6.0
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -45,6 +45,30 @@ function block_ai_get_crawlers() {
 }
 
 /**
+ * Returns crawler user-agents the site owner has opted out of blocking.
+ *
+ * @return string[]
+ */
+function block_ai_get_disabled_crawlers() {
+	static $disabled = null;
+
+	if ( null !== $disabled ) {
+		return $disabled;
+	}
+
+	$stored = get_option( 'block_ai_crawlers_disabled', array() );
+	if ( ! is_array( $stored ) ) {
+		$disabled = array();
+		return $disabled;
+	}
+
+	$known    = array_keys( block_ai_get_crawlers() );
+	$disabled = array_values( array_intersect( $stored, $known ) );
+
+	return $disabled;
+}
+
+/**
  * Adds blocking directives to robots.txt
  *
  * @param string $robots inputs default robots.txt.
@@ -53,6 +77,11 @@ function block_ai_get_crawlers() {
  */
 function block_ai_robots_txt( $robots, $public ) {
 	$crawlers = block_ai_get_crawlers();
+	$disabled = block_ai_get_disabled_crawlers();
+
+	if ( ! empty( $disabled ) ) {
+		$crawlers = array_diff_key( $crawlers, array_fill_keys( $disabled, true ) );
+	}
 
 	if ( empty( $crawlers ) ) {
 		$robots .= block_ai_robots_txt_custom_rules();
@@ -85,14 +114,29 @@ function block_ai_robots_txt_custom_rules() {
 	if ( ! empty( $custom_robots_txt ) ) {
 		return "\n# Start Block AI Crawlers - Custom Rules\n" . $custom_robots_txt . "\n# End Block AI Crawlers - Custom Rules\n";
 	}
+
+	return '';
 }
 
 add_action( 'wp_head', 'block_ai_meta_tag', 1 );
 
 /**
+ * Whether the experimental noai meta tag should be output.
+ *
+ * @return bool
+ */
+function block_ai_meta_tag_enabled() {
+	return '1' === (string) get_option( 'block_ai_crawlers_meta_tag', '1' );
+}
+
+/**
  * Adds no AI meta tag
  */
 function block_ai_meta_tag() {
+	if ( ! block_ai_meta_tag_enabled() ) {
+		return;
+	}
+
 	echo '<meta name="robots" content="noai, noimageai" />';
 }
 
@@ -129,7 +173,7 @@ function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name 
 
 
 /**
- * Adds ratings nudge to plugins page
+ * Adds review link to plugins page
  *
  * @access public
  * @param array  $links_array            An array of the plugin's metadata.
@@ -138,22 +182,7 @@ function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name 
  */
 function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
-
-		$links_array[] = "<a href='https://wordpress.org/support/plugin/block-ai-crawlers/reviews/#new-post' target='_blank' title='Rate 5 Stars'>
-		<i class='rate-stars'>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. '</i></a>';
-
-		$stars_color = '#ffb900';
-
-		echo '<style>'
-		. '.rate-stars{display:inline-block;color:' . esc_attr( $stars_color ) . ';position:relative;top:3px;}'
-		. '.rate-stars svg {fill:' . esc_attr( $stars_color ) . ';}'
-		. '</style>';
+		$links_array[] = '<a href="https://wordpress.org/support/plugin/block-ai-crawlers/reviews/#new-post" target="_blank" rel="noopener noreferrer">Leave a Review</a>';
 	}
 
 	return $links_array;
@@ -163,12 +192,142 @@ add_filter( 'plugin_row_meta', 'block_ai_append_plugin_rating', 10, 4 );
 
 add_action( 'admin_init', 'block_ai_crawlers_settings' );
 
+add_action( 'updated_option', 'block_ai_maybe_flush_page_caches', 10, 1 );
+add_action( 'added_option', 'block_ai_maybe_flush_page_caches', 10, 1 );
+
+/**
+ * Flushes page caches when plugin settings that affect public output change.
+ *
+ * @param string $option Option name that was added or updated.
+ * @return void
+ */
+function block_ai_maybe_flush_page_caches( $option ) {
+	$watched = array(
+		'block_ai_crawlers_disabled',
+		'block_ai_crawlers_meta_tag',
+		'block_ai_crawlers_custom_robots_txt',
+	);
+
+	if ( ! in_array( $option, $watched, true ) ) {
+		return;
+	}
+
+	block_ai_flush_page_caches();
+}
+
+/**
+ * Best-effort flush of common page / CDN caches.
+ *
+ * Settings saves are rare; prefer clearing enough to refresh robots.txt and HTML meta tags.
+ *
+ * @return void
+ */
+function block_ai_flush_page_caches() {
+	static $done = false;
+
+	if ( $done ) {
+		return;
+	}
+	$done = true;
+
+	$robots_url = home_url( '/robots.txt' );
+
+	// WP Rocket — URL then domain (meta tags appear on HTML pages).
+	if ( function_exists( 'rocket_clean_files' ) ) {
+		rocket_clean_files( $robots_url );
+	}
+	if ( function_exists( 'rocket_clean_domain' ) ) {
+		rocket_clean_domain();
+	}
+
+	// LiteSpeed Cache.
+	if ( has_action( 'litespeed_purge_url' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party LiteSpeed Cache API.
+		do_action( 'litespeed_purge_url', $robots_url );
+	}
+	if ( has_action( 'litespeed_purge_all' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party LiteSpeed Cache API.
+		do_action( 'litespeed_purge_all' );
+	}
+
+	// WP Super Cache.
+	if ( function_exists( 'wp_cache_clear_cache' ) ) {
+		wp_cache_clear_cache();
+	}
+
+	// W3 Total Cache.
+	if ( function_exists( 'w3tc_flush_url' ) ) {
+		w3tc_flush_url( $robots_url );
+	}
+	if ( function_exists( 'w3tc_flush_all' ) ) {
+		w3tc_flush_all();
+	}
+
+	// Cache Enabler.
+	if ( has_action( 'cache_enabler_clear_complete_cache' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party Cache Enabler API.
+		do_action( 'cache_enabler_clear_complete_cache' );
+	}
+
+	// Hummingbird.
+	if ( has_action( 'wphb_clear_page_cache' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party Hummingbird API.
+		do_action( 'wphb_clear_page_cache' );
+	}
+
+	// SiteGround Optimizer.
+	if ( function_exists( 'sg_cachepress_purge_cache' ) ) {
+		sg_cachepress_purge_cache();
+	}
+	if ( function_exists( 'sg_cachepress_purge_url' ) ) {
+		sg_cachepress_purge_url( $robots_url );
+	}
+
+	// Nitropack.
+	if ( function_exists( 'nitropack_sdk_purge' ) ) {
+		nitropack_sdk_purge();
+	}
+
+	// Pantheon.
+	if ( function_exists( 'pantheon_wp_clear_edge_all' ) ) {
+		pantheon_wp_clear_edge_all();
+	}
+
+	/**
+	 * Fires after Block AI Crawlers requests a page-cache flush.
+	 *
+	 * Hosts or custom caching layers can hook here to clear robots.txt / HTML caches.
+	 *
+	 * @param string $robots_url Absolute robots.txt URL.
+	 */
+	do_action( 'block_ai_crawlers_flushed_caches', $robots_url );
+}
 
 /**
  * Registers settings and sections for the Block AI Crawlers plugin.
  */
 function block_ai_crawlers_settings() {
+	register_setting(
+		'block_ai_crawlers_options',
+		'block_ai_crawlers_disabled',
+		array(
+			'type'              => 'array',
+			'sanitize_callback' => 'block_ai_crawlers_sanitize_disabled',
+			'default'           => array(),
+		)
+	);
+
 	register_setting( 'block_ai_crawlers_options', 'block_ai_crawlers_custom_robots_txt', array( 'sanitize_callback' => 'block_ai_crawlers_sanitize_robots_txt' ) );
+
+	register_setting(
+		'block_ai_crawlers_options',
+		'block_ai_crawlers_meta_tag',
+		array(
+			'type'              => 'string',
+			'sanitize_callback' => 'block_ai_crawlers_sanitize_meta_tag',
+			'default'           => '1',
+		)
+	);
 
 	add_settings_section(
 		'block_ai_crawlers_robots_section',
@@ -184,6 +343,50 @@ function block_ai_crawlers_settings() {
 		'block-ai-crawlers-robots',
 		'block_ai_crawlers_robots_section'
 	);
+}
+
+/**
+ * Sanitizes the list of crawlers opted out of blocking.
+ *
+ * Expects checked "Block" boxes posted as block_ai_crawlers_blocked[ Name ] = 1.
+ * Stores the inverse: known crawlers that were left unchecked.
+ *
+ * @param mixed $value Unused placeholder from the Settings API hidden field.
+ * @return string[]
+ */
+function block_ai_crawlers_sanitize_disabled( $value ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+	$known = array_keys( block_ai_get_crawlers() );
+
+	// Settings API sanitize callbacks run after options.php verifies the nonce.
+	// phpcs:disable WordPress.Security.NonceVerification.Missing
+	$blocked_input = array();
+	if ( isset( $_POST['block_ai_crawlers_blocked'] ) && is_array( $_POST['block_ai_crawlers_blocked'] ) ) {
+		$blocked_input = map_deep( wp_unslash( $_POST['block_ai_crawlers_blocked'] ), 'sanitize_text_field' );
+	}
+	// phpcs:enable WordPress.Security.NonceVerification.Missing
+
+	$blocked = array();
+	foreach ( array_keys( $blocked_input ) as $name ) {
+		$name = sanitize_text_field( (string) $name );
+		if ( '' !== $name ) {
+			$blocked[] = $name;
+		}
+	}
+
+	$blocked  = array_intersect( $blocked, $known );
+	$disabled = array_values( array_diff( $known, $blocked ) );
+
+	return $disabled;
+}
+
+/**
+ * Sanitizes the meta tag enabled setting.
+ *
+ * @param mixed $value Submitted option value.
+ * @return string '1' or '0'
+ */
+function block_ai_crawlers_sanitize_meta_tag( $value ) {
+	return ( '1' === (string) $value ) ? '1' : '0';
 }
 
 

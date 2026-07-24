@@ -2,7 +2,8 @@
 /.git
 /.github
 /node_modules
+/bin
 
 .distignore
 .gitignore
-.DS_STORE
+.DS_Store
