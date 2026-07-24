@@ -37,7 +37,7 @@ The blocked crawler list is generated at build time from [ai.robots.txt](https:/
 
 ### Experimental Meta Tags
 
-The plugin adds the exeperimental "noai, noimageai" directive to your site's meta tags. You can toggle this on and off as needed.
+The plugin adds the experimental "noai, noimageai" directive to your site's meta tags. You can toggle this on and off as needed.
 
 ### Custom robots.txt Rules
 
