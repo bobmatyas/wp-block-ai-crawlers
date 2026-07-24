@@ -256,8 +256,14 @@ function block_ai_flush_page_caches() {
 	}
 
 	// LiteSpeed Cache.
-	do_action( 'litespeed_purge_url', $robots_url );
-	do_action( 'litespeed_purge_all' );
+	if ( has_action( 'litespeed_purge_url' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party LiteSpeed Cache API.
+		do_action( 'litespeed_purge_url', $robots_url );
+	}
+	if ( has_action( 'litespeed_purge_all' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party LiteSpeed Cache API.
+		do_action( 'litespeed_purge_all' );
+	}
 
 	// WP Super Cache.
 	if ( function_exists( 'wp_cache_clear_cache' ) ) {
@@ -273,10 +279,16 @@ function block_ai_flush_page_caches() {
 	}
 
 	// Cache Enabler.
-	do_action( 'cache_enabler_clear_complete_cache' );
+	if ( has_action( 'cache_enabler_clear_complete_cache' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party Cache Enabler API.
+		do_action( 'cache_enabler_clear_complete_cache' );
+	}
 
 	// Hummingbird.
-	do_action( 'wphb_clear_page_cache' );
+	if ( has_action( 'wphb_clear_page_cache' ) ) {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Third-party Hummingbird API.
+		do_action( 'wphb_clear_page_cache' );
+	}
 
 	// SiteGround Optimizer.
 	if ( function_exists( 'sg_cachepress_purge_cache' ) ) {
@@ -360,16 +372,17 @@ function block_ai_crawlers_settings() {
 function block_ai_crawlers_sanitize_disabled( $value ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 	$known = array_keys( block_ai_get_crawlers() );
 
-	// phpcs:ignore WordPress.Security.NonceVerification.Missing -- options.php verifies the Settings API nonce.
-	$blocked_input = isset( $_POST['block_ai_crawlers_blocked'] ) ? wp_unslash( $_POST['block_ai_crawlers_blocked'] ) : array();
-
-	if ( ! is_array( $blocked_input ) ) {
-		$blocked_input = array();
+	// Settings API sanitize callbacks run after options.php verifies the nonce.
+	// phpcs:disable WordPress.Security.NonceVerification.Missing
+	$blocked_input = array();
+	if ( isset( $_POST['block_ai_crawlers_blocked'] ) && is_array( $_POST['block_ai_crawlers_blocked'] ) ) {
+		$blocked_input = map_deep( wp_unslash( $_POST['block_ai_crawlers_blocked'] ), 'sanitize_text_field' );
 	}
+	// phpcs:enable WordPress.Security.NonceVerification.Missing
 
 	$blocked = array();
 	foreach ( array_keys( $blocked_input ) as $name ) {
-		$name = sanitize_text_field( $name );
+		$name = sanitize_text_field( (string) $name );
 		if ( '' !== $name ) {
 			$blocked[] = $name;
 		}
