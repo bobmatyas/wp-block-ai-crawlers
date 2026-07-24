@@ -173,7 +173,7 @@ function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name 
 
 
 /**
- * Adds ratings nudge to plugins page
+ * Adds review link to plugins page
  *
  * @access public
  * @param array  $links_array            An array of the plugin's metadata.
@@ -182,22 +182,7 @@ function block_ai_prepend_plugin_settings_link( $links_array, $plugin_file_name 
  */
 function block_ai_append_plugin_rating( $links_array, $plugin_file_name ) {
 	if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
-
-		$links_array[] = "<a href='https://wordpress.org/support/plugin/block-ai-crawlers/reviews/#new-post' target='_blank' title='Rate 5 Stars'>
-		<i class='rate-stars'>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-		. '</i></a>';
-
-		$stars_color = '#ffb900';
-
-		echo '<style>'
-		. '.rate-stars{display:inline-block;color:' . esc_attr( $stars_color ) . ';position:relative;top:3px;}'
-		. '.rate-stars svg {fill:' . esc_attr( $stars_color ) . ';}'
-		. '</style>';
+		$links_array[] = '<a href="https://wordpress.org/support/plugin/block-ai-crawlers/reviews/#new-post" target="_blank" rel="noopener noreferrer">Leave a Review</a>';
 	}
 
 	return $links_array;
