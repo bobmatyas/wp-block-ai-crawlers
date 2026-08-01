@@ -1,7 +1,7 @@
 <?php
 /**
  * Auto-generated from ai.robots.txt robots.json. Do not edit.
- * Upstream-SHA: a2332929eba6e4d51585708208db872351e26e4c
+ * Upstream-SHA: 9154c718862ca158cc27be9d925c04134a251d10
  * Source: https://github.com/ai-robots-txt/ai.robots.txt
  *
  * @package Block_AI_Crawlers
@@ -334,10 +334,6 @@ return array(
 	),
 	'iaskspider/2.0' => array(
 		'description' => 'Used to provide answers to user queries.',
-		'link'        => '',
-	),
-	'IbouBot' => array(
-		'description' => 'Ibou.io operates a crawler service named IbouBot which fuels and updates their graph representation of the World Wide Web. This database and all the metrics are used to provide a search engine.',
 		'link'        => '',
 	),
 	'ICC-Crawler' => array(

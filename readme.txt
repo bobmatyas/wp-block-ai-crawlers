@@ -4,7 +4,7 @@ Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 6.9
 Tested up to: 7.0
 Requires PHP: 8.2
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,10 @@ You can test by running the following on the command line:
 
 
 == Changelog ==
+
+= 1.6.1 - 08/01/2026 =
+- Add: Sync blocked crawler list from ai.robots.txt (remove IbouBot)
+- Update: Replace screenshot
 
 = 1.6.0 - 07/24/2026 =
 - New: Per-crawler toggles to opt individual bots out of robots.txt blocking
