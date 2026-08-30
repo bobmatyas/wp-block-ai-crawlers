@@ -2,9 +2,9 @@
 Contributors: lastsplash
 Tags: ai, robots.txt, chatgpt, crawlers
 Requires at least: 6.9
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,9 @@ You can test by running the following on the command line:
 
 
 == Changelog ==
+
+= 1.6.2 =
+* Tested up to WordPress 7.1.
 
 = 1.6.1 - 08/01/2026 =
 - Add: Sync blocked crawler list from ai.robots.txt (remove IbouBot)
