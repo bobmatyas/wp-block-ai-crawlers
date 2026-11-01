@@ -112,6 +112,7 @@ You can test by running the following on the command line:
 = 1.6.3 - 11/01/2026 =
 - Update: Require WordPress 7.0 or later
 - Fix: Declare minimum WordPress and PHP versions in the plugin header so WordPress enforces them
+- Fix: Cleanup Plugin Check messages
 
 = 1.6.2 =
 * Tested up to WordPress 7.1.
