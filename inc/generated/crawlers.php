@@ -1,7 +1,7 @@
 <?php
 /**
  * Auto-generated from ai.robots.txt robots.json. Do not edit.
- * Upstream-SHA: 9154c718862ca158cc27be9d925c04134a251d10
+ * Upstream-SHA: 1aee98013ad05aa8552a519116e903116329c4f7
  * Source: https://github.com/ai-robots-txt/ai.robots.txt
  *
  * @package Block_AI_Crawlers
@@ -12,9 +12,17 @@ return array(
 		'description' => 'AddSearchBot is a web crawler that indexes website content for AddSearch\'s AI-powered site search solution, collecting data to provide fast and accurate search results. More info can be found at https://knownagents.com/agents/addsearchbot',
 		'link'        => 'https://knownagents.com/agents/addsearchbot',
 	),
+	'AgentDataBot' => array(
+		'description' => 'AgentDataBot visits public web pages to identify technology stacks, company details, and team members. The data builds AgentData\'s company-intelligence database for AI ag… More info can be found at https://knownagents.com/agents/agentdatabot',
+		'link'        => 'https://knownagents.com/agents/agentdatabot',
+	),
 	'AgentTimes' => array(
 		'description' => 'Scrapes data for AI news aggregation and republishing.',
 		'link'        => 'https://theagenttimes.com/about',
+	),
+	'AGI Agent' => array(
+		'description' => 'AGI Agent is an AI assistant operated by AGI, Inc. that navigates websites to complete user-directed tasks, including online purchases and other actions. More info can be found at https://knownagents.com/agents/agi-agent',
+		'link'        => 'https://knownagents.com/agents/agi-agent',
 	),
 	'AI2Bot' => array(
 		'description' => 'Explores \'certain domains\' to find web content.',
@@ -33,8 +41,8 @@ return array(
 		'link'        => 'https://www.aihitdata.com/about',
 	),
 	'AIWebIndex' => array(
-		'description' => 'AIWebIndex is a web crawler operated by Lyrenth that builds an AI-readable index of web content for AI systems. More info can be found at https://knownagents.com/agents/aiwebindex',
-		'link'        => 'https://knownagents.com/agents/aiwebindex',
+		'description' => 'Builds an index of public pages and serves them to AI agents as extracted, readable text with attribution and a link back to the source. Does not train foundation models on crawled content. Identity can be checked three ways: published IP ranges at https://lyrenth.com/bot/ip-ranges.json, forward-confirmed reverse DNS under lyrenth.com, and Web Bot Auth signatures (RFC 9421). Full policy at https://lyrenth.com/crawler-policy',
+		'link'        => 'https://lyrenth.com',
 	),
 	'amazon-kendra' => array(
 		'description' => 'Amazon Kendra is a highly accurate intelligent search service that enables your users to search unstructured data using natural language. It returns specific answers to questions, giving users an experience that\'s close to interacting with a human expert. It is highly scalable and capable of meeting performance demands, tightly integrated with other AWS services such as Amazon S3 and Amazon Lex, and offers enterprise-grade security.',
@@ -112,6 +120,10 @@ return array(
 		'description' => 'bigsur.ai is a web crawler operated by Big Sur AI that fetches website content to enable AI-powered web agents, sales assistants, and content marketing solutions for busi… More info can be found at https://knownagents.com/agents/bigsur-ai',
 		'link'        => 'https://knownagents.com/agents/bigsur-ai',
 	),
+	'BixelBot' => array(
+		'description' => 'BixelBot collects public company and market signals for Bixel\'s structured company-data platform, which supplies verified business information to AI agents and developers… More info can be found at https://knownagents.com/agents/bixelbot',
+		'link'        => 'https://knownagents.com/agents/bixelbot',
+	),
 	'Bravebot' => array(
 		'description' => 'Bravebot is a web crawler by Brave that indexes pages for Brave Search, providing search data and AI-optimized context to power chatbots, agents, and RAG pipelines. More info can be found at https://knownagents.com/agents/bravebot',
 		'link'        => 'https://knownagents.com/agents/bravebot',
@@ -131,6 +143,10 @@ return array(
 	'Bytespider' => array(
 		'description' => 'Downloads data to train LLMS, including ChatGPT competitors.',
 		'link'        => '',
+	),
+	'CartAI Agentic Commerce' => array(
+		'description' => 'CartAI Agentic Commerce is a signed browser agent operated by CartAI that accesses online stores to support user-directed shopping and checkout workflows. More info can be found at https://knownagents.com/agents/cartai-agentic-commerce',
+		'link'        => 'https://knownagents.com/agents/cartai-agentic-commerce',
 	),
 	'CCBot' => array(
 		'description' => 'Web archive going back to 2008. [Cited in thousands of research papers per year](https://commoncrawl.org/research-papers).',
@@ -172,9 +188,17 @@ return array(
 		'description' => 'Scrapes data to train LLMs and AI products offered by Anthropic.',
 		'link'        => 'https://www.anthropic.com',
 	),
+	'CledaraBot' => array(
+		'description' => 'CledaraBot is an AI agent operated by Cledara that visits SaaS providers to complete customer-approved administrative tasks, including invoice collection and user managem… More info can be found at https://knownagents.com/agents/cledarabot',
+		'link'        => 'https://knownagents.com/agents/cledarabot',
+	),
 	'Cloudflare-AutoRAG' => array(
 		'description' => 'AutoRAG is an all-in-one AI search solution.',
 		'link'        => 'https://developers.cloudflare.com/autorag', // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Info link only, not loaded content.
+	),
+	'CloudflareBrowserRenderingCrawler' => array(
+		'description' => 'CloudflareBrowserRenderingCrawler is a web crawler operated by Cloudflare that returns rendered website content for research, monitoring, and AI data workflows. More info can be found at https://knownagents.com/agents/cloudflarebrowserrenderingcrawler',
+		'link'        => 'https://knownagents.com/agents/cloudflarebrowserrenderingcrawler',
 	),
 	'CloudVertexBot' => array(
 		'description' => 'CloudVertexBot is a Google-operated crawler available to site owners to request targeted crawls of their own sites for AI training purposes on the Vertex AI platform. More info can be found at https://knownagents.com/agents/cloudvertexbot',
@@ -183,6 +207,10 @@ return array(
 	'Code' => array(
 		'description' => 'Code (GitHub Copilot) is an AI coding agent that can autonomously plan, build, and execute development tasks, functioning as a collaborative AI pair programmer. More info can be found at https://knownagents.com/agents/code',
 		'link'        => 'https://knownagents.com/agents/code',
+	),
+	'Codex' => array(
+		'description' => 'Codex is an AI coding agent by OpenAI that helps developers write, review, debug, and ship code. More info can be found at https://knownagents.com/agents/codex',
+		'link'        => 'https://knownagents.com/agents/codex',
 	),
 	'cohere-ai' => array(
 		'description' => 'Retrieves data based on user prompts.',
@@ -228,6 +256,18 @@ return array(
 		'description' => 'Diffbot is a web crawler that extracts and structures website content using AI-powered visual understanding, providing knowledge graph data for applications like market i… More info can be found at https://knownagents.com/agents/diffbot',
 		'link'        => 'https://www.diffbot.com/',
 	),
+	'Diffbot-User' => array(
+		'description' => 'Diffbot-User is used by requests originating on behalf of a human user browsing a URL using Diffbot software, in response to their input. Documented by Diffbot at https://docs.diffbot.com/docs/does-crawl-respect-robotstxt',
+		'link'        => 'https://www.diffbot.com/',
+	),
+	'Dot' => array(
+		'description' => 'Dot is an OpenAI AI agent that uses a cloud browser to research websites and carry out ongoing tasks for users. More info can be found at https://knownagents.com/agents/dot',
+		'link'        => 'https://knownagents.com/agents/dot',
+	),
+	'DoubaoBot' => array(
+		'description' => 'DoubaoBot is a crawler operated by ByteDance to collect web content for its Doubao AI assistant. Distinct from Bytespider (general/training) and TikTokSpider (video).',
+		'link'        => '',
+	),
 	'DuckAssistBot' => array(
 		'description' => 'DuckAssistBot is a web crawler that scans websites to collect content for DuckDuckGo\'s AI-assisted answers feature, which generates brief responses to search queries usin… More info can be found at https://knownagents.com/agents/duckassistbot',
 		'link'        => 'https://knownagents.com/agents/duckassistbot',
@@ -240,9 +280,29 @@ return array(
 		'description' => 'Supports company\'s AI-powered social and email management products.',
 		'link'        => 'https://echobox.com',
 	),
+	'ElevenlabsBot' => array(
+		'description' => 'ElevenlabsBot fetches pages that customers add to or refresh in ElevenLabs agents\' knowledge bases, making that content available in conversations. More info can be found at https://knownagents.com/agents/elevenlabsbot',
+		'link'        => 'https://elevenlabs.io',
+	),
+	'ElevenlabsCrawler' => array(
+		'description' => 'ElevenlabsCrawler is ElevenLabs\' web crawler that collects public content that may be used to train its generative AI models. More info can be found at https://knownagents.com/agents/elevenlabscrawler',
+		'link'        => 'https://elevenlabs.io',
+	),
+	'ERNIEBot' => array(
+		'description' => 'ERNIEBot is a crawler operated by Baidu to collect public web content used for its ERNIE (Wenxin) large language models.',
+		'link'        => '',
+	),
 	'ExaBot' => array(
 		'description' => 'ExaBot is a web crawler that indexes web content to power Exa\'s AI search engine and semantic search APIs for AI applications. More info can be found at https://knownagents.com/agents/exabot',
 		'link'        => 'https://knownagents.com/agents/exabot',
+	),
+	'ExaSearchBot' => array(
+		'description' => 'ExaSearchBot is a web crawler operated by Exa that discovers and indexes public web pages so their content can be found, retrieved, and cited through Exa. More info can be found at https://knownagents.com/agents/exasearchbot',
+		'link'        => 'https://exa.ai',
+	),
+	'ExaUser' => array(
+		'description' => 'ExaUser is Exa\'s on-demand fetcher that retrieves live website content when a user or an application built on the Exa API requests it. More info can be found at https://knownagents.com/agents/exauser',
+		'link'        => 'https://knownagents.com/agents/exauser',
 	),
 	'FacebookBot' => array(
 		'description' => 'Officially used for training Meta "speech recognition technology," unknown if used to train Meta AI specifically.',
@@ -320,9 +380,29 @@ return array(
 		'description' => 'Data is used to train current and future models, removed paywalled data, PII and data that violates the company\'s policies.',
 		'link'        => 'https://openai.com',
 	),
+	'Grok Bot' => array(
+		'description' => 'Grok Bot is a personal AI agent created by xAI that runs on a persistent cloud computer with a browser, filesystem, and terminal. It completes multi-step tasks across app… More info can be found at https://knownagents.com/agents/grok-bot',
+		'link'        => 'https://knownagents.com/agents/grok-bot',
+	),
+	'GrokAppAndroid' => array(
+		'description' => 'Grok AI is an advanced AI assistant built by xAI that leverages real-time web and X data to produce context-aware, multimodal responses.',
+		'link'        => 'https://x.ai',
+	),
+	'GrokBot' => array(
+		'description' => 'Used to collect publicly available web content to support the training of Grok AI models.',
+		'link'        => 'https://x.ai',
+	),
+	'HarkBot' => array(
+		'description' => 'HarkBot visits web pages on behalf of signed-in Hark users as Hark carries out research, form-filling, and account actions. More info can be found at https://knownagents.com/agents/harkbot',
+		'link'        => 'https://knownagents.com/agents/harkbot',
+	),
 	'HenkBot' => array(
 		'description' => 'Henkbot crawls the web on behalf of Valyu, an AI search infrastructure provider that indexes content for use in AI-powered retrieval pipelines. More info can be found at https://knownagents.com/agents/henkbot',
 		'link'        => 'https://knownagents.com/agents/henkbot',
+	),
+	'Hunyuan' => array(
+		'description' => 'Hunyuan is a training crawler operated by Tencent. Its job is to read public web pages and feed that content into a machine-learning pipeline that trains future versions of the model.',
+		'link'        => 'https://hunyuan.tencent.com',
 	),
 	'iAskBot' => array(
 		'description' => 'Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/iaskbot',
@@ -352,6 +432,10 @@ return array(
 		'description' => 'Downloads large sets of images into datasets for LLM training or other purposes.',
 		'link'        => 'https://github.com/rom1504/img2dataset',
 	),
+	'Instinct' => array(
+		'description' => 'Instinct is a personal AI agent that uses a phone and computer to complete everyday tasks such as ordering groceries, booking travel, arranging appointments, and communic… More info can be found at https://knownagents.com/agents/instinct',
+		'link'        => 'https://knownagents.com/agents/instinct',
+	),
 	'ISSCyberRiskCrawler' => array(
 		'description' => 'Used to train machine learning based models to quantify cyber risk.',
 		'link'        => 'https://iss-cyber.com',
@@ -364,9 +448,25 @@ return array(
 		'description' => 'Kangaroo Bot is used by the company Kangaroo LLM to download data to train AI models tailored to Australian language and culture. More info can be found at https://knownagents.com/agents/kangaroo-bot',
 		'link'        => 'https://knownagents.com/agents/kangaroo-bot',
 	),
+	'KeenableBot' => array(
+		'description' => 'KeenableBot is a web crawler operated by Keenable for indexing web content for AI search.',
+		'link'        => 'https://keenable.ai/',
+	),
+	'Kimi-Agent' => array(
+		'description' => 'Kimi-Agent is a browser-enabled AI agent operated by Moonshot AI that browses websites while carrying out user-directed research and other tasks. More info can be found at https://knownagents.com/agents/kimi-agent',
+		'link'        => 'https://knownagents.com/agents/kimi-agent',
+	),
+	'Kimi-SearchBot' => array(
+		'description' => 'Kimi-SearchBot powers Kimi\'s search features: it analyzes pages for relevance and builds the search index. Documented by Moonshot AI at https://www.kimi.ai/policies/kimi-crawlers',
+		'link'        => 'https://www.moonshot.ai',
+	),
 	'Kimi-User' => array(
 		'description' => 'Kimi-User is a web crawler operated by Moonshot AI that fetches web content on behalf of users interacting with Kimi. When a user asks Kimi to summarize an article or ans… More info can be found at https://knownagents.com/agents/kimi-user',
 		'link'        => 'https://knownagents.com/agents/kimi-user',
+	),
+	'KimiBot' => array(
+		'description' => 'KimiBot crawls content potentially used to train Kimi\'s foundation models. Documented by Moonshot AI at https://www.kimi.ai/policies/kimi-crawlers',
+		'link'        => 'https://www.moonshot.ai',
 	),
 	'KlaviyoAIBot' => array(
 		'description' => 'KlaviyoAIBot is Klaviyo\'s web crawler that fetches publicly available pages from domains explicitly connected to user accounts to power the Kai Customer Agent feature. Th… More info can be found at https://knownagents.com/agents/klaviyoaibot',
@@ -387,6 +487,10 @@ return array(
 	'LCC' => array(
 		'description' => 'Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/lcc',
 		'link'        => 'https://knownagents.com/agents/lcc',
+	),
+	'Lightpanda' => array(
+		'description' => 'Lightpanda is a custom-built headless browser designed for AI and automation.',
+		'link'        => 'https://github.com/lightpanda-io/browser/issues/3156#issuecomment-5217843616',
 	),
 	'LinerBot' => array(
 		'description' => 'LinerBot is the web crawler used by Liner AI assistant to gather information from academic sources and websites to provide accurate answers with line-by-line source citat… More info can be found at https://knownagents.com/agents/linerbot',
@@ -424,6 +528,14 @@ return array(
 		'description' => 'As per their documentation, "The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users. In doing so, Meta analyzes online content to enhance the relevance and accuracy of Meta AI. Allowing Meta-WebIndexer in your robots.txt file helps us cite and link to your content in Meta AI\'s responses."',
 		'link'        => 'https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/',
 	),
+	'MistralAI-Index' => array(
+		'description' => 'MistralAI-Index is Mistral AI\'s indexing crawler. It collects web content for Mistral\'s search index (the source behind Le Chat\'s answers). Mistral states the content is not used for generative AI training. Documented at https://docs.mistral.ai/robots',
+		'link'        => 'https://docs.mistral.ai/robots',
+	),
+	'MistralAI-Training' => array(
+		'description' => 'MistralAI-Training crawls web content to build training datasets. Documented by Mistral at https://docs.mistral.ai/robots/',
+		'link'        => 'https://mistral.ai',
+	),
 	'MistralAI-User' => array(
 		'description' => 'MistralAI-User is Mistral\'s AI assistant bot that performs web browsing and data gathering tasks for users in Le Chat, including opening web pages and retrieving informat… More info can be found at https://knownagents.com/agents/mistralai-user',
 		'link'        => 'https://knownagents.com/agents/mistralai-user',
@@ -432,9 +544,17 @@ return array(
 		'description' => 'MistralAI-User is for user actions in LeChat. When users ask LeChat a question, it may visit a web page to help answer and include a link to the source in its response.',
 		'link'        => '',
 	),
+	'MoonshotBot' => array(
+		'description' => 'MoonshotBot is a training crawler operated by Kimi. Its job is to read public web pages and feed that content into a machine-learning pipeline that trains future versions of the model.',
+		'link'        => 'https://www.kimi.ai/',
+	),
 	'Mozilla-Tabstack' => array(
-		'description' => 'Tabstack is a web intelligence API for AI agents. It extracts structured data from web pages and makes it available to AI agents.',
-		'link'        => 'https://docs.tabstack.ai/trust/controlling-access',
+		'description' => 'Mozilla-Tabstack is an AI agent operated by Mozilla that performs programmatic, AI-driven interactions with web content through Tabstack. More info can be found at https://knownagents.com/agents/mozilla-tabstack',
+		'link'        => 'https://knownagents.com/agents/mozilla-tabstack',
+	),
+	'Muse' => array(
+		'description' => 'Muse is a personal AI agent created by Meta that uses a web browser and connected apps to complete multi-step tasks such as filling out forms, booking travel, sending ema… More info can be found at https://knownagents.com/agents/muse',
+		'link'        => 'https://knownagents.com/agents/muse',
 	),
 	'MyCentralAIScraperBot' => array(
 		'description' => 'Operator and data use is unclear at this time.',
@@ -443,6 +563,10 @@ return array(
 	'NagetBot' => array(
 		'description' => '\'Naget revolutionizes content discovery through an AI-powered ecosystem that transforms how we generate, organize, share, and discover valuable content.\' (https://naget.com/) User-agent string links https://naget.ai/bot which yields 404.',
 		'link'        => 'https://naget.com/',
+	),
+	'nbot' => array(
+		'description' => 'NBot uses advanced AI to scan news outlets, industry blogs, newsletters, and social media.',
+		'link'        => 'https://nbot.ai',
 	),
 	'netEstate Imprint Crawler' => array(
 		'description' => 'netEstate Imprint Crawler is an AI data scraper operated by netEstate. If you think this is incorrect or can provide additional detail about its purpose, please contact us. More info can be found at https://knownagents.com/agents/netestate-imprint-crawler',
@@ -459,6 +583,10 @@ return array(
 	'NovaAct' => array(
 		'description' => 'Nova Act is an AI agent created by Amazon that can use a web browser. It can intelligently navigate and interact with websites to complete multi-step tasks on behalf of a… More info can be found at https://knownagents.com/agents/novaact',
 		'link'        => 'https://knownagents.com/agents/novaact',
+	),
+	'OAI-AdsBot' => array(
+		'description' => 'OAI-AdsBot visits the landing page of a page submitted as an ad on ChatGPT, to check it against OpenAI\'s policies and, per OpenAI, to "determine when it\'s most relevant to show the ad to users". OpenAI states it only visits pages submitted as ads and that the data is not used to train foundation models. Documented at https://developers.openai.com/api/docs/bots',
+		'link'        => 'https://openai.com',
 	),
 	'OAI-SearchBot' => array(
 		'description' => 'Crawls sites to surface as results in SearchGPT.',
@@ -496,6 +624,10 @@ return array(
 		'description' => 'Compiles data on businesses and business professionals that is structured using AI and machine learning.',
 		'link'        => 'https://panscient.com',
 	),
+	'Payhawk Invoice Fetching Agent' => array(
+		'description' => 'Payhawk Invoice Fetching Agent is a browser agent operated by Payhawk that retrieves invoices from supplier websites for users and attaches them to expense records. More info can be found at https://knownagents.com/agents/payhawk-invoice-fetching-agent',
+		'link'        => 'https://knownagents.com/agents/payhawk-invoice-fetching-agent',
+	),
 	'Perplexity-User' => array(
 		'description' => 'Perplexity-User supports user actions within Perplexity. When users ask Perplexity a question, it might visit a web page to help provide an accurate answer and include a … More info can be found at https://knownagents.com/agents/perplexity-user',
 		'link'        => 'https://www.perplexity.ai/',
@@ -509,7 +641,7 @@ return array(
 		'link'        => 'https://huawei.com/',
 	),
 	'PhindBot' => array(
-		'description' => 'Phind is an AI-powered answer engine designed for developers, offering technical answers and code examples. It uses real-time web search and specialized AI models to prov… More info can be found at https://knownagents.com/agents/phindbot',
+		'description' => 'PhindBot retrieves web pages to support Phind\'s developer-focused search and answer engine, which uses current web information to answer technical questions. More info can be found at https://knownagents.com/agents/phindbot',
 		'link'        => 'https://www.phind.com/',
 	),
 	'Poggio-Citations' => array(
@@ -519,6 +651,10 @@ return array(
 	'Poseidon Research Crawler' => array(
 		'description' => 'Lab focused on scaling the interpretability research necessary to make better AI systems possible.',
 		'link'        => 'https://www.poseidonresearch.com',
+	),
+	'qodercli' => array(
+		'description' => 'qodercli is a command-line AI coding agent operated by Qoder that helps developers build, debug, and modify software from the terminal. More info can be found at https://knownagents.com/agents/qodercli',
+		'link'        => 'https://knownagents.com/agents/qodercli',
 	),
 	'QualifiedBot' => array(
 		'description' => 'QualifiedBot is Qualified\'s web crawler that analyzes customer websites to provide contextual information for their AI-powered chatbots and conversational marketing platf… More info can be found at https://knownagents.com/agents/qualifiedbot',
@@ -540,6 +676,14 @@ return array(
 		'description' => 'Operated by QuillBot as part of their suite of AI product offerings.',
 		'link'        => 'https://quillbot.com',
 	),
+	'QwenBot' => array(
+		'description' => 'QwenBot is a crawler operated by Alibaba to collect public web content for its Qwen (Tongyi Qianwen) large language models. Alibaba also operates TongyiBot.',
+		'link'        => '',
+	),
+	'Reflectionbot' => array(
+		'description' => 'An undocumented crawler whose user agent links to Reflection, a company that builds AI models.',
+		'link'        => 'https://reflection.ai/',
+	),
 	'SBIntuitionsBot' => array(
 		'description' => 'AI development and information analysis',
 		'link'        => 'https://www.sbintuitions.co.jp/en/',
@@ -547,6 +691,10 @@ return array(
 	'Scrapy' => array(
 		'description' => '"AI and machine learning applications often need large amounts of quality data, and web data extraction is a fast, efficient way to build structured data sets."',
 		'link'        => 'https://www.zyte.com',
+	),
+	'ScryBot' => array(
+		'description' => 'An AI agent companion that allows you to enhance answers by scraping data',
+		'link'        => 'https://scry.io/',
 	),
 	'SemrushBot-OCOB' => array(
 		'description' => 'Data collected is used for the ContentShake AI tool reports.',
@@ -636,6 +784,10 @@ return array(
 		'description' => 'Description unavailable from knownagents.com More info can be found at https://knownagents.com/agents/wrtnbot',
 		'link'        => 'https://knownagents.com/agents/wrtnbot',
 	),
+	'xAI-Grok' => array(
+		'description' => 'xAI-Grok is an xAI crawler token associated with Grok content collection. It is classified as training because it performs automated collection rather than a user-triggered fetch.',
+		'link'        => 'https://x.ai/',
+	),
 	'YaK' => array(
 		'description' => 'Retrieves data used for Meltwater\'s AI enabled consumer intelligence suite',
 		'link'        => 'https://www.meltwater.com/en/suite/consumer-intelligence',
@@ -647,6 +799,10 @@ return array(
 	'YandexAdditionalBot' => array(
 		'description' => 'Retrieves data used for YandexGPT quick answers features.',
 		'link'        => 'https://yandex.ru',
+	),
+	'YiBot' => array(
+		'description' => 'YiBot/1.0 is an advanced artificial intelligence platform designed to enhance interaction and engagement across various applications. Its architecture allows for seamless integration into websites and applications, providing users with a responsive and intuitive interface.',
+		'link'        => 'https://01.ai/',
 	),
 	'YiyanBot' => array(
 		'description' => 'YiyanBot is a web crawler operated by Baidu that fetches web content for the yiyan.baidu.com assistant and related ERNIE-generated answers. More info can be found at https://knownagents.com/agents/yiyanbot',
