@@ -105,6 +105,58 @@ function block_ai_import_php_escape( $value ) {
 	return str_replace( array( '\\', "'" ), array( '\\\\', "\\'" ), $value );
 }
 
+/**
+ * Return a phpcs:ignore comment when a string would trip Plugin Check's
+ * offloading sniff, or an empty string otherwise.
+ *
+ * The sniff flags any string mentioning a known CDN domain, regardless of
+ * how it is used. Crawler links are only rendered as "Info" anchors in the
+ * admin, so a match here is always a false positive.
+ *
+ * Keep in sync with PluginCheckCS\PluginCheck\Helpers\OffloadingServicesTrait:
+ * https://github.com/WordPress/plugin-check/blob/trunk/phpcs-sniffs/PluginCheck/Helpers/OffloadingServicesTrait.php
+ *
+ * @param string $value String that will be written to the generated file.
+ * @return string
+ */
+function block_ai_import_offloading_ignore( $value ) {
+	$services = array(
+		'code\.jquery\.com',
+		'(?<!api\.)cloudflare\.com',
+		'cdn\.jsdelivr\.net',
+		'cdn\.rawgit\.com',
+		'code\.getmdl\.io',
+		'bootstrapcdn',
+		'cl\.ly',
+		'cdn\.datatables\.net',
+		'aspnetcdn\.com',
+		'ajax\.googleapis\.com',
+		'webfonts\.zoho\.com',
+		'raw\.githubusercontent\.com',
+		'github\.com\/.*\/raw',
+		'unpkg\.com',
+		'imgur\.com',
+		'rawgit\.com',
+		'amazonaws\.com',
+		'cdn\.tiny\.cloud',
+		'tiny\.cloud',
+		'tailwindcss\.com',
+		'herokuapp\.com',
+		'(?<!fonts\.)gstatic\.com',
+		'kit\.fontawesome',
+		'use\.fontawesome',
+		'googleusercontent\.com',
+		'placeholder\.com',
+		's\.w\.org',
+	);
+
+	if ( ! preg_match( '/(' . implode( '|', $services ) . ')/i', $value ) ) {
+		return '';
+	}
+
+	return ' // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Info link only, not loaded content.';
+}
+
 // Load JSON.
 if ( null !== $local_json ) {
 	if ( ! is_readable( $local_json ) ) {
@@ -175,8 +227,8 @@ $out .= "return array(\n";
 
 foreach ( $crawlers as $name => $meta ) {
 	$out .= "\t'" . block_ai_import_php_escape( $name ) . "' => array(\n";
-	$out .= "\t\t'description' => '" . block_ai_import_php_escape( $meta['description'] ) . "',\n";
-	$out .= "\t\t'link'        => '" . block_ai_import_php_escape( $meta['link'] ) . "',\n";
+	$out .= "\t\t'description' => '" . block_ai_import_php_escape( $meta['description'] ) . "'," . block_ai_import_offloading_ignore( $meta['description'] ) . "\n";
+	$out .= "\t\t'link'        => '" . block_ai_import_php_escape( $meta['link'] ) . "'," . block_ai_import_offloading_ignore( $meta['link'] ) . "\n";
 	$out .= "\t),\n";
 }
 

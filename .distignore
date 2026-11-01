@@ -7,3 +7,4 @@
 .distignore
 .gitignore
 .DS_Store
+/README.md

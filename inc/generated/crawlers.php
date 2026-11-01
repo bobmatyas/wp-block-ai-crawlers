@@ -174,7 +174,7 @@ return array(
 	),
 	'Cloudflare-AutoRAG' => array(
 		'description' => 'AutoRAG is an all-in-one AI search solution.',
-		'link'        => 'https://developers.cloudflare.com/autorag',
+		'link'        => 'https://developers.cloudflare.com/autorag', // phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Info link only, not loaded content.
 	),
 	'CloudVertexBot' => array(
 		'description' => 'CloudVertexBot is a Google-operated crawler available to site owners to request targeted crawls of their own sites for AI training purposes on the Vertex AI platform. More info can be found at https://knownagents.com/agents/cloudvertexbot',
