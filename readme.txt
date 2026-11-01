@@ -110,6 +110,7 @@ You can test by running the following on the command line:
 == Changelog ==
 
 = 1.6.3 - 11/01/2026 =
+- Add: Sync blocked crawler list from ai.robots.txt (39 new crawlers)
 - Update: Require WordPress 7.0 or later
 - Fix: Declare minimum WordPress and PHP versions in the plugin header so WordPress enforces them
 - Fix: Cleanup Plugin Check messages
