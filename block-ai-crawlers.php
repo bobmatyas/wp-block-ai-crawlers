@@ -5,7 +5,9 @@
  * Author:          Bob Matyas
  * Author URI:      https://www.bobmatyas.com
  * Text Domain:     block-ai-crawlers
- * Version:         1.6.2
+ * Version:         1.6.3
+ * Requires at least: 7.0
+ * Requires PHP:      8.2
  * License:         GPLv2 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  *
