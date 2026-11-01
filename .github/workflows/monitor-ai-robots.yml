@@ -82,6 +82,8 @@ jobs:
               exit 0
             fi
 
+            # Make sure older issues (created before auto-assign) are assigned too.
+            gh issue edit "${EXISTING}" --add-assignee "${{ github.repository_owner }}" || true
             gh issue comment "${EXISTING}" --body "Upstream \`robots.json\` changed again. Latest upstream SHA: \`${UPSTREAM_SHA}\` (committed plugin list: \`${LOCAL_SHA}\`)."
             echo "Commented on open issue #${EXISTING} with new upstream SHA."
             exit 0
@@ -112,9 +114,12 @@ jobs:
           # Strip leading tabs from the heredoc for cleaner issue body.
           BODY=$(printf '%s\n' "$BODY" | sed 's/^[[:space:]]*//')
 
+          # Assign the repo owner so updates arrive as "participating"
+          # notifications, independent of repo watch settings.
           gh issue create \
             --title "Update crawler list from ai.robots.txt" \
             --label "upstream-crawlers" \
+            --assignee "${{ github.repository_owner }}" \
             --body "$BODY"
 
           echo "Opened issue for upstream crawler update."
